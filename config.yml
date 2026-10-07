@@ -71,6 +71,8 @@ collections:
           - {name: ship_rest_india, label: "Delivery charge: rest of India (₹ per order)", widget: number, value_type: int}
           - {name: ship_north_east, label: "Delivery charge: other North East states (₹ per order)", widget: number, value_type: int}
           - {name: free_delivery_above, label: "Free delivery above (₹ order value)", widget: number, value_type: int}
+          - {name: assam_media, label: "Assam photos/video (up to 3; first is the large one)", widget: list, required: false, fields: [{name: src, label: "Photo or video (.mp4)", widget: file}, {name: poster, label: "Video cover image (videos only)", widget: image, required: false}, {name: caption, label: "Caption", widget: string, required: false}, {name: alt, label: "Description for screen readers", widget: string, required: false}]}
+          - {name: kerala_media, label: "Kerala photos/video (up to 3)", widget: list, required: false, fields: [{name: src, label: "Photo or video (.mp4)", widget: file}, {name: poster, label: "Video cover image (videos only)", widget: image, required: false}, {name: caption, label: "Caption", widget: string, required: false}, {name: alt, label: "Description for screen readers", widget: string, required: false}]}
           - {name: phone, label: "Phone shown on site", widget: string}
           - {name: whatsapp, label: "WhatsApp number for orders (country code, digits only)", widget: string, hint: "Example: 918260377370"}
           - {name: email, label: "Email shown on site", widget: string}

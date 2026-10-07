@@ -14,7 +14,9 @@
       ],
       "images": [
         "rose-open.jpg",
-        "rose-ctc-label.jpg"
+        "rose-ctc-front-label.jpg",
+        "rose-ctc-label.jpg",
+        "rose-ctc-front.jpg"
       ],
       "ingredients": "CTC Black Tea (Camellia sinensis), Rose Petals (Rosa spp.)",
       "nutrition": [
@@ -102,7 +104,10 @@
         "Chai"
       ],
       "images": [
+        "elaichi-jar.jpg",
+        "ctc-elachi.jpg",
         "elaichi-open.jpg",
+        "elaichi-front-label.jpg",
         "elaichi-label.jpg"
       ],
       "ingredients": "100% CTC tea powder with elachi (cardamom) flavour",

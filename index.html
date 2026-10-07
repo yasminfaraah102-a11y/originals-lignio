@@ -176,6 +176,20 @@ section{padding-block:72px}
 .chapter.flip .art{order:2}
 .chapter .art{border-radius:22px;overflow:hidden;border:1px solid var(--line);min-width:0}
 .chapter .art svg{display:block;width:100%;height:auto}
+figure.m{margin:0;position:relative;overflow:hidden;background:var(--chip)}
+figure.m img,figure.m video{width:100%;height:100%;object-fit:cover;display:block}
+figure.m figcaption{position:absolute;left:10px;bottom:10px;right:10px;width:max-content;max-width:calc(100% - 20px);background:#1c120cb3;color:#fff;font-size:.78rem;font-weight:700;letter-spacing:.02em;padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px)}
+figure.m.single{aspect-ratio:600/340}
+.chapter .art.collage{border:0;border-radius:0;overflow:visible;display:grid;gap:12px}
+.collage figure.m{border-radius:18px;box-shadow:0 10px 30px #2a1a1222}
+.collage.is-assam{grid-template-columns:1.25fr 1fr;grid-template-rows:auto auto}
+.collage.is-assam .m0{grid-column:1 / -1;aspect-ratio:16/9}
+.collage.is-assam .m1{grid-column:2;aspect-ratio:4/3;margin-top:-80px;border:5px solid var(--paper);z-index:1}
+.collage.is-assam.c2 .m1{grid-column:2}
+.collage.is-kerala{grid-template-columns:1fr 1fr;align-items:center}
+.collage.is-kerala .m0{aspect-ratio:3/4}
+.collage.is-kerala .m1{aspect-ratio:9/16;max-height:520px;width:100%;transform:translateY(24px)}
+@media (max-width:520px){.collage.is-assam .m1{grid-column:1 / -1;margin-top:0;border:0}.collage.is-kerala .m1{transform:none}}
 .chapter h3{font-size:clamp(1.8rem,3.4vw,2.5rem);margin:6px 0 12px}
 .chapter p{color:var(--muted);font-size:1.04rem;max-width:52ch}
 .chapter ul{margin:14px 0 0;padding-left:20px;color:var(--muted)}
@@ -224,8 +238,8 @@ textarea{min-height:72px;resize:vertical}
 /* modal */
 .modal{position:fixed;inset:0;z-index:60;background:#0b0604cc;display:grid;place-items:center;padding:16px}
 .sheet{background:var(--paper);color:var(--ink);border-radius:24px;max-width:940px;width:100%;max-height:calc(100% - 20px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}
-.gal{background:var(--chip);padding:16px;display:grid;gap:10px;align-content:start;min-width:0}
-.gal .main{width:100%;aspect-ratio:4/5;object-fit:contain;border-radius:14px;background:var(--bg);display:block}
+.gal{background:var(--chip);padding:16px;display:grid;gap:10px;align-content:center;min-width:0}
+.gal .main{width:100%;max-height:70vh;object-fit:contain;border-radius:14px;background:var(--bg);display:block}
 .thumbs{display:flex;gap:8px;flex-wrap:wrap}
 .thumbs button{width:64px;height:64px;border-radius:10px;overflow:hidden;padding:0;border:2px solid transparent;cursor:pointer;background:var(--bg)}
 .thumbs button[aria-pressed="true"]{border-color:var(--gold)}
@@ -636,7 +650,15 @@ ${[-150,-110,-70,-30,10,40].map(a=>`<path d="M6 -120 q${Math.cos(a*Math.PI/180)*
 <circle cx="4" cy="-116" r="5" fill="#8a6a2a"/><circle cx="12" cy="-112" r="5" fill="#8a6a2a"/></g>`).join("")}
 <g fill="#1f4a46" font-family="Karla, sans-serif" font-weight="800" font-size="13" letter-spacing="2"><text x="20" y="30">WESTERN GHATS · KERALA</text></g>
 </svg>`};
-function paintScenes(){document.querySelectorAll("[data-scene]").forEach((el,n)=>{const k=el.dataset.scene,img=SITE[k+"_image"];el.innerHTML=img?`<img src="${esc(img)}" alt="${k==="assam"?"Assam":"Kerala"}" style="width:100%;aspect-ratio:600/340;object-fit:cover;display:block">`:SCENES[k].replace(/(id="|url\(#)(as\d|kl\d)/g,"$1$2_"+n)})}
+function mediaEl(m,cls){const src=esc(m.src),alt=esc(m.alt||"");
+ return /\.(mp4|webm|mov)$/i.test(m.src)
+  ?`<figure class="${cls}"><video src="${src}" ${m.poster?`poster="${esc(m.poster)}"`:""} autoplay muted loop playsinline preload="metadata" aria-label="${alt}"></video>${m.caption?`<figcaption>${esc(m.caption)}</figcaption>`:""}</figure>`
+  :`<figure class="${cls}"><img src="${src}" alt="${alt}" loading="lazy">${m.caption?`<figcaption>${esc(m.caption)}</figcaption>`:""}</figure>`}
+function paintScenes(){document.querySelectorAll("[data-scene]").forEach((el,n)=>{const k=el.dataset.scene,media=(SITE[k+"_media"]||[]).filter(m=>m&&m.src),img=SITE[k+"_image"];
+ if(media.length&&el.classList.contains("art")){el.classList.add("collage","c"+Math.min(media.length,3),"is-"+k);el.innerHTML=media.slice(0,3).map((m,i)=>mediaEl(m,"m m"+i)).join("");return}
+ if(media.length){el.innerHTML=mediaEl(media[0],"m single");return}
+ el.innerHTML=img?`<img src="${esc(img)}" alt="${k==="assam"?"Assam":"Kerala"}" style="width:100%;aspect-ratio:600/340;object-fit:cover;display:block">`:SCENES[k].replace(/(id="|url\(#)(as\d|kl\d)/g,"$1$2_"+n)})
+ document.querySelectorAll(".collage video,.scene video").forEach(v=>{v.muted=true;const pr=v.play();pr&&pr.catch(()=>{})})}
 
 /* spices strip */
 [["leaf","Assam tea leaf","From Kamrup and upper Assam"],["cardamom","Cardamom","Elaichi from the Western Ghats"],["cinnamon","Cinnamon","Warm bark, Kerala spice"],["clove","Clove","Bold and warming"],["petal","Rose petals","Real, dried petals"]].forEach(([k,n,s],i)=>{
