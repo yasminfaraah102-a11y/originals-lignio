@@ -1,0 +1,72 @@
+# Admin panel for thelignio.com  (open https://thelignio.com/admin)
+# GitHub repo: yasminfaraah102-a11y/originals-lignio
+backend:
+  name: github
+  repo: yasminfaraah102-a11y/originals-lignio
+  branch: main
+
+site_url: https://thelignio.com
+display_url: https://thelignio.com
+locale: en
+
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+collections:
+  - name: shop
+    label: "Blends (products)"
+    files:
+      - name: products
+        label: "All blends"
+        file: "content/products.json"
+        format: json
+        fields:
+          - name: products
+            label: "Blends"
+            label_singular: "blend"
+            widget: list
+            summary: "{{fields.name}}  ·  ₹{{fields.price}}"
+            fields:
+              - {name: name, label: "Name", widget: string, hint: "Example: Rose CTC Tea"}
+              - {name: description, label: "Short description", widget: text}
+              - {name: price, label: "Price in ₹ (leave empty for 'Price on request')", widget: number, value_type: int, required: false}
+              - {name: size, label: "Pack size", widget: string, required: false, hint: "Example: 100 g"}
+              - {name: images, label: "Photos (first one is the cover)", widget: list, required: false, field: {name: image, label: "Photo", widget: image}}
+              - {name: badge, label: "Badge on photo", widget: string, required: false, hint: "Example: New, Bestseller. Leave empty for none."}
+              - {name: featured, label: "Show on home page", widget: boolean, default: false}
+              - {name: hidden, label: "Hide from site (out of stock)", widget: boolean, default: false}
+              - {name: tags, label: "Tags", widget: list, required: false, field: {name: tag, label: "Tag", widget: string}}
+              - {name: ingredients, label: "Ingredients", widget: text, required: false}
+              - {name: nutrition, label: "Nutrition per 100 g", widget: list, required: false, fields: [{name: label, label: "Item", widget: string}, {name: value, label: "Value", widget: string}]}
+              - {name: shelf_life, label: "Shelf life", widget: string, required: false}
+              - {name: brew_steps, label: "Brewing steps (leave empty for the standard 4 steps)", widget: list, required: false, field: {name: step, label: "Step", widget: string}}
+
+  - name: pages
+    label: "Pages and text"
+    files:
+      - name: site
+        label: "Home, story and contact"
+        file: "content/site.json"
+        format: json
+        fields:
+          - {name: hero_eyebrow, label: "Home: small line above headline", widget: string}
+          - {name: hero_title, label: "Home: headline", widget: string}
+          - {name: hero_title_accent, label: "Home: headline (gold part)", widget: string}
+          - {name: hero_text, label: "Home: intro text", widget: text}
+          - {name: story_title, label: "Story: headline", widget: string}
+          - {name: story_tagline, label: "Story: script tagline", widget: string}
+          - {name: story_text, label: "Story: text (leave a blank line between paragraphs)", widget: text}
+          - {name: founders_image, label: "Story: founders picture", widget: image}
+          - {name: assam_image, label: "Assam photo (Kaziranga). Leave empty to show the illustration", widget: image, required: false}
+          - {name: assam_title, label: "Assam: title", widget: string}
+          - {name: assam_short, label: "Assam: short line (home page)", widget: text}
+          - {name: assam_text, label: "Assam: story text", widget: text}
+          - {name: assam_points, label: "Assam: bullet points", widget: list, field: {name: point, label: "Point", widget: string}}
+          - {name: kerala_image, label: "Kerala photo (Munnar, spices). Leave empty to show the illustration", widget: image, required: false}
+          - {name: kerala_title, label: "Kerala: title", widget: string}
+          - {name: kerala_short, label: "Kerala: short line (home page)", widget: text}
+          - {name: kerala_text, label: "Kerala: story text", widget: text}
+          - {name: kerala_points, label: "Kerala: bullet points", widget: list, field: {name: point, label: "Point", widget: string}}
+          - {name: phone, label: "Phone shown on site", widget: string}
+          - {name: whatsapp, label: "WhatsApp number for orders (country code, digits only)", widget: string, hint: "Example: 918260377370"}
+          - {name: email, label: "Email shown on site", widget: string}
