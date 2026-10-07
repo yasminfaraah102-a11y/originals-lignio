@@ -8,16 +8,40 @@
       "description": "Assam CTC with the delicate aroma of real rose petals. Rich taste, natural goodness.",
       "price": 120,
       "size": "100 g",
-      "tags": ["Floral", "CTC"],
-      "images": ["rose-ctc-front.jpg", "rose-ctc-back.jpg"],
+      "tags": [
+        "Floral",
+        "CTC"
+      ],
+      "images": [
+        "rose-open.jpg",
+        "rose-ctc-label.jpg"
+      ],
       "ingredients": "CTC Black Tea (Camellia sinensis), Rose Petals (Rosa spp.)",
       "nutrition": [
-        {"label": "Energy", "value": "1 kcal"},
-        {"label": "Protein", "value": "0.2 g"},
-        {"label": "Carbohydrate", "value": "0.0 g"},
-        {"label": "Total fat", "value": "0.0 g"},
-        {"label": "Dietary fibre", "value": "0.0 g"},
-        {"label": "Sodium", "value": "2 mg"}
+        {
+          "label": "Energy",
+          "value": "1 kcal"
+        },
+        {
+          "label": "Protein",
+          "value": "0.2 g"
+        },
+        {
+          "label": "Carbohydrate",
+          "value": "0.0 g"
+        },
+        {
+          "label": "Total fat",
+          "value": "0.0 g"
+        },
+        {
+          "label": "Dietary fibre",
+          "value": "0.0 g"
+        },
+        {
+          "label": "Sodium",
+          "value": "2 mg"
+        }
       ],
       "shelf_life": "Best before 12 months from manufacture",
       "brew_steps": []
@@ -30,8 +54,15 @@
       "description": "A fragrant blend of Assam tea and real rose petals. Smooth, floral and calming.",
       "price": 99,
       "size": "100 g",
-      "tags": ["Floral", "Bestseller"],
-      "images": ["rose-jar.jpg", "rose-open.jpg", "rose-label.jpg"],
+      "tags": [
+        "Floral",
+        "Bestseller"
+      ],
+      "images": [
+        "rose-jar.jpg",
+        "rose-open.jpg",
+        "rose-label.jpg"
+      ],
       "ingredients": "Assam tea, real rose petals",
       "nutrition": [],
       "shelf_life": "",
@@ -45,8 +76,14 @@
       "description": "Rich Assam tea with warm Kerala cinnamon. A cup that brings people together.",
       "price": 89,
       "size": "100 g",
-      "tags": ["Warm", "Kerala spice"],
-      "images": ["cinnamon.jpg", "cinnamon-back.jpg"],
+      "tags": [
+        "Warm",
+        "Kerala spice"
+      ],
+      "images": [
+        "cinnamon.jpg",
+        "cinnamon-back.jpg"
+      ],
       "ingredients": "Assam CTC Black Tea (Camellia sinensis), Natural Cinnamon",
       "nutrition": [],
       "shelf_life": "",
@@ -60,8 +97,14 @@
       "description": "Assam CTC with green cardamom. Strong, aromatic and perfect for milk chai.",
       "price": null,
       "size": "",
-      "tags": ["Cardamom", "Chai"],
-      "images": ["ctc-elachi.jpg"],
+      "tags": [
+        "Cardamom",
+        "Chai"
+      ],
+      "images": [
+        "elaichi-open.jpg",
+        "elaichi-label.jpg"
+      ],
       "ingredients": "100% CTC tea powder with elachi (cardamom) flavour",
       "nutrition": [],
       "shelf_life": "Best before 18 months from packaging",
@@ -80,7 +123,9 @@
       "description": "Assam CTC with whole Kerala clove for a bold, warming cup.",
       "price": null,
       "size": "",
-      "tags": ["Bold"],
+      "tags": [
+        "Bold"
+      ],
       "images": [],
       "ingredients": "",
       "nutrition": [],
@@ -95,7 +140,10 @@
       "description": "Assam CTC with a blend of Kerala spices. Our everyday masala chai.",
       "price": null,
       "size": "",
-      "tags": ["Spiced", "Chai"],
+      "tags": [
+        "Spiced",
+        "Chai"
+      ],
       "images": [],
       "ingredients": "",
       "nutrition": [],
@@ -110,7 +158,9 @@
       "description": "A mix of our Kerala spices in one jar, for when you want a bit of everything.",
       "price": null,
       "size": "",
-      "tags": ["Spiced"],
+      "tags": [
+        "Spiced"
+      ],
       "images": [],
       "ingredients": "",
       "nutrition": [],
@@ -125,7 +175,9 @@
       "description": "Pure Assam CTC black tea. Strong, malty and refreshing every day.",
       "price": null,
       "size": "",
-      "tags": ["Pure Assam"],
+      "tags": [
+        "Pure Assam"
+      ],
       "images": [],
       "ingredients": "Assam CTC Black Tea (Camellia sinensis)",
       "nutrition": [],

@@ -155,6 +155,22 @@ section{padding-block:72px}
 .story-top .txt{display:grid;gap:16px}
 .story-top .txt p{max-width:58ch;color:var(--muted);font-size:1.06rem}
 @media (max-width:820px){.story-top .wrap{grid-template-columns:1fr;gap:28px}.story-top img{max-width:260px}}
+.tale-sec{padding-block:56px 24px}
+.tale{max-width:1040px;margin:0 auto}
+.tale-stage{position:relative;aspect-ratio:16/9;max-width:100%;border-radius:22px;overflow:hidden;background:#20140d;box-shadow:0 24px 60px #2a1a1233;border:1px solid var(--line);cursor:pointer}
+.tale-stage svg{display:block;width:100%;height:100%}
+.tale-stage .tw{animation:tw 2.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:1}}
+.tale-play{position:absolute;inset:0;margin:auto;width:max-content;height:max-content;display:flex;align-items:center;gap:12px;padding:14px 24px 14px 14px;border-radius:999px;border:0;background:#20140dd9;color:#fff;font:800 1.05rem var(--body);cursor:pointer;box-shadow:0 10px 30px #0006}
+.tale-play b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--gold-hi);color:#1c120c;font-size:1rem;padding-left:3px}
+.tale-play:hover b{transform:scale(1.08)}
+.tale-end{position:absolute;inset:auto 0 0 0;padding:20px;display:grid;gap:12px;justify-items:center;background:linear-gradient(transparent,#20140de6);color:#fff;text-align:center}
+.tale-end p{font:1.6rem var(--script);color:#ffe2a0}
+.tale-end .btn-ghost{color:#fff}
+.tale-bar{position:absolute;left:0;right:0;bottom:0;height:4px;background:#ffffff26}.tale-bar i{display:block;height:100%;width:0;background:var(--gold-hi)}
+.tale-cap{min-height:3.4em;margin-top:16px;text-align:center;font:600 clamp(1.05rem,2.2vw,1.35rem)/1.5 var(--display);font-style:italic;color:var(--ink);max-width:60ch;margin-inline:auto;opacity:0;transition:opacity .6s}
+.tale-cap.on{opacity:1}
+@media (max-width:520px){.tale-play{padding:10px 18px 10px 10px;font-size:.92rem}.tale-play b{width:36px;height:36px}.tale-end p{font-size:1.2rem}.tale-end{padding:12px}}
 .chapter{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
 .chapter.flip{grid-template-columns:.85fr 1.15fr}
 .chapter.flip .art{order:2}
@@ -184,6 +200,7 @@ section{padding-block:72px}
 .qty button{width:32px;height:32px;border-radius:50%;border:1px solid #ffffff44;background:transparent;color:#fff;font-size:1.05rem;cursor:pointer}
 .qty output{min-width:22px;text-align:center;font-variant-numeric:tabular-nums;font-weight:800}
 .empty{color:var(--dark-muted);padding-block:18px}
+.sub{display:flex;justify-content:space-between;padding-top:10px;color:var(--dark-muted);font-variant-numeric:tabular-nums;font-weight:700}
 .total{display:flex;justify-content:space-between;padding-top:14px;font:700 1.4rem var(--display);font-variant-numeric:tabular-nums;color:#fff}
 .note{font-size:.88rem;color:var(--dark-muted);margin-top:8px}
 form{display:grid;gap:12px}
@@ -227,6 +244,8 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 .foot{display:grid;grid-template-columns:auto 1fr 1fr;gap:32px;align-items:start}
 .foot img{width:110px;border-radius:50%;background:#fff}
 .foot b{color:var(--ink);display:block;margin-bottom:4px;font-size:1.05rem}
+.policies{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:24px;font-weight:700;font-size:.92rem}
+.policies a{color:var(--ink)}
 .legal{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.85rem}
 @media (max-width:720px){.foot{grid-template-columns:1fr}}
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--leaf);color:#fff;padding:10px 18px;border-radius:999px;font-weight:800;font-size:.92rem;z-index:70}
@@ -258,7 +277,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
         <div class="eyebrow" data-c="hero_eyebrow">Assam tea · Kerala spices</div>
         <h1><span data-c="hero_title">Bold roots,</span> <em data-c="hero_title_accent">warm stories.</em></h1>
         <p class="lead" data-c="hero_text">Strong CTC from the tea gardens of Assam, blended with real rose petals and spices from Kerala. Real leaves. Real goodness.</p>
-        <div class="ctas"><a class="btn btn-gold" href="#blends">Shop the blends</a><a class="btn btn-ghost" href="#story">Our story</a></div>
+        <div class="ctas"><a class="btn btn-gold" href="#blends">Shop the blends</a><a class="btn btn-ghost" href="#story">▶ Watch our story</a></div>
         <div class="origin"><span class="as">Rooted in Assam</span><span class="kl">Inspired by Kerala</span></div>
       </div>
       <div class="brew-box">
@@ -327,6 +346,19 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 
 <!-- STORY -->
 <div class="view" id="v-story">
+  <section class="tale-sec">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="eyebrow">A short story</div><h2>The tale of two gardens</h2></div><p>How a girl from Kerala and a girl from Assam brewed Originals. Press play, it runs about half a minute.</p></div>
+      <div class="tale" id="tale">
+        <div class="tale-stage">
+          <button class="tale-play" type="button"><b aria-hidden="true">▶</b><span>Watch our story</span></button>
+          <div class="tale-end" hidden><p>Good tea brings good people together.</p><div class="ctas"><a class="btn btn-gold" href="#blends">Taste the blends</a><button class="btn btn-ghost tale-again" type="button">Watch again</button></div></div>
+          <div class="tale-bar"><i></i></div>
+        </div>
+        <p class="tale-cap" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
   <section class="story-top">
     <div class="wrap">
       <img id="foundersImg" src="founders.jpg" alt="The two founders sharing a cup of tea">
@@ -366,6 +398,8 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
         <div class="panel">
           <h3>Your order</h3>
           <div id="lines"></div>
+          <div class="sub" id="subRow"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+          <div class="sub" id="shipRow"><span id="shipLabel">Delivery</span><span id="shipping">Enter PIN</span></div>
           <div class="total"><span>Total</span><span id="total">₹0</span></div>
           <p class="note" id="totalNote"></p>
         </div>
@@ -398,7 +432,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 </div>
 </main>
 <!-- Netlify saves every order sent through this hidden form -->
-<form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="name"><input name="phone"><textarea name="address"></textarea><input name="pin"><input name="note"><textarea name="items"></textarea><input name="total"></form>
+<form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="name"><input name="phone"><textarea name="address"></textarea><input name="pin"><input name="note"><input name="subtotal"><input name="delivery"><textarea name="items"></textarea><input name="total"></form>
 
 <footer>
   <div class="wrap">
@@ -407,6 +441,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
       <div><b>Lignio Private Limited</b>Vennukkaran House, Anthrekkapadam, Mothirakkanni, Mukundapuram, Thrissur 680724, Kerala</div>
       <div><b>Assam unit</b>Ghoramara, Amingaon, Kamrup, Assam 781031</div>
     </div>
+    <nav class="policies"><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation</a><a href="shipping.html">Shipping &amp; Delivery</a><a href="contact.html">Contact Us</a></nav>
     <div class="legal"><span>CIN U16211KL2026PTC105032 · FSSAI Lic. No. 21326204000609</span><span>© 2026 Originals by Lignio. Made in India.</span></div>
   </div>
 </footer>
@@ -495,18 +530,34 @@ function openProduct(id){const p=P(id);const imgs=p.imgs||[];
 function closeModal(){$("#modal").hidden=true}
 
 /* ---------- cart ---------- */
+/* delivery charges: per order, by PIN region, free above threshold (editable in site.json) */
+function shipInfo(sub){const pin=($("#pin")?.value||"").trim();const S=SITE||{};
+ const home=+(S.ship_kerala_assam??50),india=+(S.ship_rest_india??80),ne=+(S.ship_north_east??100),free=+(S.free_delivery_above??899);
+ if(sub>=free&&sub>0)return{fee:0,label:"Delivery (free above "+inr(free)+")",known:true};
+ if(!/^\d{6}$/.test(pin))return{fee:0,label:"Delivery",known:false,free};
+ const p2=pin.slice(0,2),p3=pin.slice(0,3);
+ if(["67","68","69","78"].includes(p2))return{fee:home,label:"Delivery (Kerala / Assam)",known:true,free};
+ if(p2==="79"||p3==="737")return{fee:ne,label:"Delivery (North East)",known:true,free};
+ return{fee:india,label:"Delivery (rest of India)",known:true,free}}
+function totals(){const ids=Object.keys(cart).filter(k=>cart[k]>0);let t=0,ask=false;ids.forEach(id=>{const p=P(id);p.price?t+=p.price*cart[id]:ask=true});const sh=shipInfo(t);return{ids,sub:t,ask,sh,total:t+(sh.known?sh.fee:0)}}
+function renderTotals(){const T=totals();
+ $("#subtotal").textContent=inr(T.sub)+(T.ask?" +":"");
+ $("#shipLabel").textContent=T.sh.label;
+ $("#shipping").textContent=!T.ids.length?"–":(T.sh.known?(T.sh.fee?inr(T.sh.fee):"FREE"):"Enter PIN");
+ $("#total").textContent=inr(T.total)+(T.ask?" +":"");
+ let note="";if(T.ask)note="Some blends are priced on request. We will confirm the final total on WhatsApp.";
+ else if(T.ids.length&&T.sh.free&&T.sub<T.sh.free)note="Add "+inr(T.sh.free-T.sub)+" more for free delivery.";
+ $("#totalNote").textContent=note}
 function renderCart(){
  const ids=Object.keys(cart).filter(k=>cart[k]>0);
  $("#cartCount").textContent=ids.reduce((a,k)=>a+cart[k],0);
  $("#lines").innerHTML=ids.length?ids.map(id=>{const p=P(id);return `<div class="line"><div class="nm"><b>${p.name}</b><small>${p.price?inr(p.price)+" × "+cart[id]+" = "+inr(p.price*cart[id]):"Price on request"}</small></div>
   <div class="qty"><button type="button" data-dec="${id}" aria-label="One less ${p.name}">−</button><output>${cart[id]}</output><button type="button" data-inc="${id}" aria-label="One more ${p.name}">+</button></div></div>`}).join(""):`<p class="empty">No blends yet. Add some from Our Blends.</p>`;
- let t=0,ask=false;ids.forEach(id=>{const p=P(id);p.price?t+=p.price*cart[id]:ask=true});
- $("#total").textContent=inr(t)+(ask?" +":"");
- $("#totalNote").textContent=ask?"Some blends are priced on request. We will confirm the final total on WhatsApp.":(ids.length?"Delivery charges, if any, are confirmed on WhatsApp.":"");
+ renderTotals();
  save();renderCards();updateWA();
 }
 function orderText(){const ids=Object.keys(cart).filter(k=>cart[k]>0);const v=id=>$("#"+id).value.trim();
- return `Hello Originals by Lignio, I'd like to order:\n${ids.map(id=>{const p=P(id);return `• ${p.raw} × ${cart[id]}${p.price?" ("+inr(p.price*cart[id])+")":""}`}).join("\n")}\n\nName: ${v("nm")}\nPhone: ${v("ph")}\nAddress: ${v("ad")}\nPIN: ${v("pin")}${v("nt")?"\nNote: "+v("nt"):""}`}
+ return `Hello Originals by Lignio, I'd like to order:\n${ids.map(id=>{const p=P(id);return `• ${p.raw} × ${cart[id]}${p.price?" ("+inr(p.price*cart[id])+")":""}`}).join("\n")}\n\nSubtotal: ${$("#subtotal").textContent}\n${$("#shipLabel").textContent}: ${$("#shipping").textContent}\nTotal: ${$("#total").textContent}\n\nName: ${v("nm")}\nPhone: ${v("ph")}\nAddress: ${v("ad")}\nPIN: ${v("pin")}${v("nt")?"\nNote: "+v("nt"):""}`}
 function problem(){
  if(!Object.values(cart).some(v=>v>0))return "Add at least one blend to your order.";
  if(!$("#nm").value.trim())return "Enter your name.";
@@ -528,7 +579,7 @@ document.addEventListener("click",e=>{
  const c=t.closest("[data-copy]");if(c)copy(c.dataset.copy,"Copied");
 });
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
-["nm","ph","ad","pin","nt"].forEach(id=>$("#"+id).addEventListener("input",()=>{$("#err").textContent="";updateWA()}));
+["nm","ph","ad","pin","nt"].forEach(id=>$("#"+id).addEventListener("input",()=>{$("#err").textContent="";if(id==="pin")renderTotals();updateWA()}));
 $("#waBtn").addEventListener("click",e=>{const p=problem();if(p){e.preventDefault();$("#err").textContent=p;return}saveOrder()});
 $("#actions").addEventListener("pointerdown",()=>{const p=problem();if(p)$("#err").textContent=p});
 $("#copyOrder").onclick=()=>{const p=problem();if(p){$("#err").textContent=p;return}saveOrder();copy(orderText(),"Order copied")};
@@ -657,7 +708,7 @@ function applySite(){
  paintScenes();
 }
 function saveOrder(){const ids=Object.keys(cart).filter(k=>cart[k]>0);const v=id=>$("#"+id).value.trim();
- const body=new URLSearchParams({"form-name":"order",name:v("nm"),phone:v("ph"),address:v("ad"),pin:v("pin"),note:v("nt"),items:ids.map(id=>P(id).raw+" x "+cart[id]).join("\n"),total:$("#total").textContent});
+ const body=new URLSearchParams({"form-name":"order",name:v("nm"),phone:v("ph"),address:v("ad"),pin:v("pin"),note:v("nt"),items:ids.map(id=>P(id).raw+" x "+cart[id]).join("\n"),subtotal:$("#subtotal").textContent,delivery:$("#shipping").textContent,total:$("#total").textContent});
  fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body}).catch(()=>{})}
 route();
 Promise.all(["site.json","products.json"].map(u=>fetch(u,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()})))
@@ -666,5 +717,6 @@ Promise.all(["site.json","products.json"].map(u=>fetch(u,{cache:"no-store"}).the
  .finally(()=>{Object.keys(cart).forEach(k=>{if(!P(k))delete cart[k]});applySite();renderCart();route()});
 </script>
 
+<script src="tale.js"></script>
 </body>
 </html>

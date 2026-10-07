@@ -67,6 +67,10 @@ collections:
           - {name: kerala_short, label: "Kerala: short line (home page)", widget: text}
           - {name: kerala_text, label: "Kerala: story text", widget: text}
           - {name: kerala_points, label: "Kerala: bullet points", widget: list, field: {name: point, label: "Point", widget: string}}
+          - {name: ship_kerala_assam, label: "Delivery charge: Kerala & Assam (₹ per order)", widget: number, value_type: int}
+          - {name: ship_rest_india, label: "Delivery charge: rest of India (₹ per order)", widget: number, value_type: int}
+          - {name: ship_north_east, label: "Delivery charge: other North East states (₹ per order)", widget: number, value_type: int}
+          - {name: free_delivery_above, label: "Free delivery above (₹ order value)", widget: number, value_type: int}
           - {name: phone, label: "Phone shown on site", widget: string}
           - {name: whatsapp, label: "WhatsApp number for orders (country code, digits only)", widget: string, hint: "Example: 918260377370"}
           - {name: email, label: "Email shown on site", widget: string}
