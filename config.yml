@@ -1,4 +1,4 @@
-# Admin panel for thelignio.com  (open https://thelignio.com/admin)
+# Admin panel for thelignio.com  (open https://thelignio.com/admin.html)
 # GitHub repo: yasminfaraah102-a11y/originals-lignio
 backend:
   name: github
@@ -9,8 +9,8 @@ site_url: https://thelignio.com
 display_url: https://thelignio.com
 locale: en
 
-media_folder: "images/uploads"
-public_folder: "images/uploads"
+media_folder: "uploads"
+public_folder: "uploads"
 
 collections:
   - name: shop
@@ -18,7 +18,7 @@ collections:
     files:
       - name: products
         label: "All blends"
-        file: "content/products.json"
+        file: "products.json"
         format: json
         fields:
           - name: products
@@ -46,7 +46,7 @@ collections:
     files:
       - name: site
         label: "Home, story and contact"
-        file: "content/site.json"
+        file: "site.json"
         format: json
         fields:
           - {name: hero_eyebrow, label: "Home: small line above headline", widget: string}

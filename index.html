@@ -295,10 +295,10 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
     <div class="wrap">
       <div class="sec-head"><div><div class="eyebrow">Made with care</div><h2>Packed by hand, labelled with love</h2></div></div>
       <div class="labels">
-        <figure><img src="images/rose-label.jpg" alt="Rose Tea label with the two founders" loading="lazy"></figure>
-        <figure><img src="images/rose-open.jpg" alt="Open jar of rose tea with real petals" loading="lazy"></figure>
-        <figure><img src="images/rose-ctc-front.jpg" alt="Rose CTC Tea pink label" loading="lazy"></figure>
-        <figure><img src="images/originals-seal.jpg" alt="Originals seal with a steaming cup and spices" loading="lazy"></figure>
+        <figure><img src="rose-label.jpg" alt="Rose Tea label with the two founders" loading="lazy"></figure>
+        <figure><img src="rose-open.jpg" alt="Open jar of rose tea with real petals" loading="lazy"></figure>
+        <figure><img src="rose-ctc-front.jpg" alt="Rose CTC Tea pink label" loading="lazy"></figure>
+        <figure><img src="originals-seal.jpg" alt="Originals seal with a steaming cup and spices" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -329,7 +329,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 <div class="view" id="v-story">
   <section class="story-top">
     <div class="wrap">
-      <img id="foundersImg" src="images/founders.jpg" alt="The two founders sharing a cup of tea">
+      <img id="foundersImg" src="founders.jpg" alt="The two founders sharing a cup of tea">
       <div class="txt">
         <div class="eyebrow">Our story</div>
         <h2><span data-c="story_title">Two friends, two states, one cup.</span><span class="script" data-c="story_tagline">Good tea brings good people together</span></h2>
@@ -403,7 +403,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 <footer>
   <div class="wrap">
     <div class="foot">
-      <img src="images/lignio-stamp.jpg" alt="Lignio Private Limited seal">
+      <img src="lignio-stamp.jpg" alt="Lignio Private Limited seal">
       <div><b>Lignio Private Limited</b>Vennukkaran House, Anthrekkapadam, Mothirakkanni, Mukundapuram, Thrissur 680724, Kerala</div>
       <div><b>Assam unit</b>Ghoramara, Amingaon, Kamrup, Assam 781031</div>
     </div>
@@ -660,7 +660,7 @@ function saveOrder(){const ids=Object.keys(cart).filter(k=>cart[k]>0);const v=id
  const body=new URLSearchParams({"form-name":"order",name:v("nm"),phone:v("ph"),address:v("ad"),pin:v("pin"),note:v("nt"),items:ids.map(id=>P(id).raw+" x "+cart[id]).join("\n"),total:$("#total").textContent});
  fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body}).catch(()=>{})}
 route();
-Promise.all(["content/site.json","content/products.json"].map(u=>fetch(u,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()})))
+Promise.all(["site.json","products.json"].map(u=>fetch(u,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()})))
  .then(([site,prods])=>{SITE=site||{};PRODUCTS=normalize(prods.products)})
  .catch(()=>{$("#grid").innerHTML=$("#featured").innerHTML='<p class="desc">Blends could not load. Refresh the page to try again.</p>'})
  .finally(()=>{Object.keys(cart).forEach(k=>{if(!P(k))delete cart[k]});applySite();renderCart();route()});
