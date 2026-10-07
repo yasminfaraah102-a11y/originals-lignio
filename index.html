@@ -197,7 +197,7 @@ figure.m.single{aspect-ratio:600/340}
 @media (max-width:820px){.chapter,.chapter.flip{grid-template-columns:1fr;gap:20px}.chapter.flip .art{order:0}}
 .spices{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .spice{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:12px 12px 16px;text-align:center}
-.spice canvas{width:100%;aspect-ratio:1;display:block}
+.spice canvas,.spice img{width:100%;aspect-ratio:1;display:block;border-radius:50%;object-fit:cover;max-width:100%}
 .spice b{display:block;font:700 1.1rem var(--display);margin-top:6px}
 .spice small{color:var(--muted);font-weight:600}
 @media (max-width:760px){.spices{grid-template-columns:repeat(2,1fr)}.spice:last-child{grid-column:span 2}}
@@ -661,11 +661,11 @@ function paintScenes(){document.querySelectorAll("[data-scene]").forEach((el,n)=
  document.querySelectorAll(".collage video,.scene video").forEach(v=>{v.muted=true;const pr=v.play();pr&&pr.catch(()=>{})})}
 
 /* spices strip */
-[["leaf","Assam tea leaf","From Kamrup and upper Assam"],["cardamom","Cardamom","Elaichi from the Western Ghats"],["cinnamon","Cinnamon","Warm bark, Kerala spice"],["clove","Clove","Bold and warming"],["petal","Rose petals","Real, dried petals"]].forEach(([k,n,s],i)=>{
- const d=document.createElement("div");d.className="spice";const cv=document.createElement("canvas");cv.width=240;cv.height=240;const c=cv.getContext("2d");
- c.fillStyle="#2a1a12";c.beginPath();c.arc(120,120,110,0,7);c.fill();const r=rng(11+i*5);
- for(let j=0;j<5;j++)drawAt(c,k,70+r()*100,70+r()*100,28,r()*6.3);drawAt(c,k,120,120,46,-.4);
- d.append(cv);d.insertAdjacentHTML("beforeend",`<b>${n}</b><small>${s}</small>`);$("#spices").append(d)});
+[["spice-tea.jpg","Assam CTC tea","Strong, malty granules from Assam"],["spice-cardamom.jpg","Cardamom","Green elaichi from Kerala"],["spice-cinnamon.jpg","Cinnamon","Warm bark, Kerala spice"],["clove","Clove","Bold and warming"],["spice-rose.jpg","Rose petals","Real, dried petals"]].forEach(([k,n,s2],i)=>{
+ const d=document.createElement("div");d.className="spice";
+ if(k.endsWith(".jpg")){d.innerHTML=`<img src="${k}" alt="${n}" loading="lazy">`}
+ else{const cv=document.createElement("canvas");cv.width=240;cv.height=240;const c=cv.getContext("2d");c.fillStyle="#2a1a12";c.beginPath();c.arc(120,120,110,0,7);c.fill();const r=rng(11+i*5);for(let j=0;j<5;j++)drawAt(c,k,70+r()*100,70+r()*100,28,r()*6.3);drawAt(c,k,120,120,46,-.4);d.append(cv)}
+ d.insertAdjacentHTML("beforeend",`<b>${n}</b><small>${s2}</small>`);$("#spices").append(d)});
 
 /* ---------- tap-to-brew game ---------- */
 const brew=(()=>{
