@@ -328,6 +328,9 @@ textarea{min-height:72px;resize:vertical}
 .dfoot .note{color:var(--muted);font-size:.85rem}
 .dfoot .btn{justify-content:center}
 
+.paid{background:#25a35a26;border:1px solid #25a35a;border-radius:14px;padding:14px 16px;color:#fff;font-weight:700;line-height:1.5}
+.paid b{display:block;font:600 1.3rem var(--display);margin-bottom:4px}
+#payBtn[disabled]{opacity:.6;cursor:wait}
 /* modal */
 .modal{position:fixed;inset:0;z-index:60;background:#0b0604cc;display:grid;place-items:center;padding:16px}
 .sheet{background:var(--paper);color:var(--ink);border-radius:24px;max-width:940px;width:100%;max-height:calc(100% - 20px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}
@@ -531,7 +534,9 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
               <label for="nt">Note (optional)<input id="nt"></label>
             </div>
             <p class="err" id="err" role="alert"></p>
+            <div class="paid" id="paidBox" hidden></div>
             <div class="actions" id="actions">
+              <button class="btn btn-gold" type="button" id="payBtn">Pay online · UPI / Card</button>
               <a class="btn wa" id="waBtn" href="https://wa.me/918260377370" target="_blank" rel="noopener" aria-disabled="true">Send order on WhatsApp</a>
               <button class="btn btn-ghost" type="button" id="copyOrder" style="color:#fff">Copy order</button>
             </div>
@@ -547,7 +552,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 </div>
 </main>
 <!-- Netlify saves every order sent through this hidden form -->
-<form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="name"><input name="phone"><textarea name="address"></textarea><input name="pin"><input name="note"><input name="subtotal"><input name="delivery"><textarea name="items"></textarea><input name="total"></form>
+<form name="order" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="name"><input name="phone"><textarea name="address"></textarea><input name="pin"><input name="note"><input name="subtotal"><input name="delivery"><input name="payment_status"><input name="payment_id"><textarea name="items"></textarea><input name="total"></form>
 
 <footer>
   <div class="wrap">
@@ -884,9 +889,33 @@ function applySite(){
  if(SITE.email)$("#copyEmail").dataset.copy=SITE.email;
  paintScenes();
 }
-function saveOrder(){const ids=Object.keys(cart).filter(k=>cart[k]>0);const v=id=>$("#"+id).value.trim();
- const body=new URLSearchParams({"form-name":"order",name:v("nm"),phone:v("ph"),address:v("ad"),pin:v("pin"),note:v("nt"),items:ids.map(id=>P(id).raw+" x "+cart[id]).join("\n"),subtotal:$("#subtotal").textContent,delivery:$("#shipping").textContent,total:$("#total").textContent});
+function saveOrder(pay){const ids=Object.keys(cart).filter(k=>cart[k]>0);const v=id=>$("#"+id).value.trim();
+ const body=new URLSearchParams({"form-name":"order",payment_status:pay?"PAID ONLINE":"WhatsApp (unpaid)",payment_id:pay?pay.id:"",name:v("nm"),phone:v("ph"),address:v("ad"),pin:v("pin"),note:v("nt"),items:ids.map(id=>P(id).raw+" x "+cart[id]).join("\n"),subtotal:$("#subtotal").textContent,delivery:$("#shipping").textContent,total:$("#total").textContent});
  fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body}).catch(()=>{})}
+
+/* ---------- Razorpay online payment ---------- */
+function loadRzp(){return new Promise((ok,no)=>{if(window.Razorpay)return ok();const sc=document.createElement("script");sc.src="https://checkout.razorpay.com/v1/checkout.js";sc.onload=ok;sc.onerror=()=>no(new Error("load"));document.head.append(sc)})}
+async function payOnline(){const pr=problem();if(pr){$("#err").textContent=pr;return}
+ const btn=$("#payBtn");btn.disabled=true;btn.textContent="Starting payment…";$("#err").textContent="";
+ const v=id=>$("#"+id).value.trim();
+ try{
+  const r=await fetch("/.netlify/functions/create-order",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({items:cart,pin:v("pin")})});
+  const o=await r.json().catch(()=>({error:"Online payment is coming soon. Please send your order on WhatsApp."}));
+  if(!r.ok)throw new Error(o.error||"Online payment is coming soon. Please send your order on WhatsApp.");
+  await loadRzp();
+  const rz=new Razorpay({key:o.key,amount:o.amount,currency:o.currency,order_id:o.order_id,name:"Originals by Lignio",description:"Tea order",
+   prefill:{name:v("nm"),contact:v("ph").replace(/\D/g,"").slice(-10)},notes:{address:v("ad").slice(0,250),pin:v("pin")},theme:{color:"#8e2340"},
+   handler:async res=>{const ck=await fetch("/.netlify/functions/verify-payment",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(res)}).then(x=>x.json()).catch(()=>({ok:false}));
+    if(!ck.ok){$("#err").textContent="We could not confirm this payment. If money was taken, message us on WhatsApp with payment ID "+res.razorpay_payment_id+".";return}
+    saveOrder({id:res.razorpay_payment_id});
+    $("#paidBox").innerHTML=`<b>Payment received. Thank you!</b>We've got your order (payment ID ${res.razorpay_payment_id}). We'll pack it within 1–3 working days and send tracking on WhatsApp.`;$("#paidBox").hidden=false;
+    cart={};renderCart();toast("Payment successful")},
+   modal:{ondismiss:()=>{btn.disabled=false;btn.textContent="Pay online · UPI / Card"}}});
+  rz.on("payment.failed",e=>{$("#err").textContent="Payment failed: "+((e.error&&e.error.description)||"please try again.")});
+  rz.open();
+ }catch(e){$("#err").textContent=e.message==="load"?"Could not open the payment window. Check your internet and try again.":e.message}
+ btn.disabled=false;btn.textContent="Pay online · UPI / Card"}
+$("#payBtn").addEventListener("click",payOnline);
 route();
 Promise.all(["site.json","products.json"].map(u=>fetch(u,{cache:"no-store"}).then(r=>{if(!r.ok)throw 0;return r.json()})))
  .then(([site,prods])=>{SITE=site||{};PRODUCTS=normalize(prods.products)})
