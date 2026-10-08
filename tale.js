@@ -103,7 +103,7 @@ const bigCup=`<g id="tBigCup" opacity="0"><ellipse cx="0" cy="58" rx="120" ry="1
 <ellipse cx="0" cy="-40" rx="82" ry="15" fill="#8a4a24"/><ellipse cx="-14" cy="-43" rx="30" ry="5" fill="#b0703a" opacity=".7"/>
 <g transform="translate(-6 6) rotate(-30)"><ellipse rx="16" ry="7" fill="#6aa06a"/></g><g transform="translate(14 8) rotate(30)"><ellipse rx="16" ry="7" fill="#4f8f4c"/></g>
 <path id="tBigSteam" d="M-30 -70 q-14 -26 0 -52 q14 -26 0 -52 M0 -70 q-14 -26 0 -52 q14 -26 0 -52 M30 -70 q-14 -26 0 -52 q14 -26 0 -52" stroke="#fff" stroke-width="5" fill="none" opacity=".8" stroke-linecap="round"/></g>`;
-const logo=`<g id="tLogo" opacity="0" text-anchor="middle"><text x="800" y="170" font-family="Playfair Display, Georgia, serif" font-weight="800" font-size="120" fill="#ffe2a0" stroke="#5a3a1c" stroke-width="2" paint-order="stroke">Originals</text>
+const logo=`<g id="tLogo" opacity="0" text-anchor="middle"><text x="800" y="170" font-family="Fraunces, Georgia, serif" font-weight="800" font-size="120" fill="#ffe2a0" stroke="#5a3a1c" stroke-width="2" paint-order="stroke">Originals</text>
 <text x="800" y="236" font-family="Parisienne, cursive" font-size="64" fill="#fff4d6">by Lignio</text></g>`;
 let hearts="";for(let i=0;i<8;i++)hearts+=`<path id="th${i}" d="M0 6 C-12 -6 -6 -18 0 -10 C6 -18 12 -6 0 6Z" fill="${i%2?"#f08aa2":"#ffd36b"}" opacity="0"/>`;
 

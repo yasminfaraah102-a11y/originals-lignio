@@ -1,22 +1,23 @@
 {
   "products": [
     {
-      "name": "Rose CTC Tea",
-      "badge": "New",
+      "name": "Rose Tea",
+      "badge": "",
       "featured": true,
       "hidden": false,
-      "description": "Assam CTC with the delicate aroma of real rose petals. Rich taste, natural goodness.",
-      "price": 120,
+      "description": "A fragrant blend of Assam tea and real rose petals. Smooth, floral and calming.",
+      "price": 99,
       "size": "100 g",
       "tags": [
         "Floral",
-        "CTC"
+        "Bestseller"
       ],
       "images": [
+        "rose-jar.jpg",
         "rose-ctc-jar2.jpg",
         "rose-ctc-open2.jpg",
         "rose-open.jpg",
-        "rose-ctc-front.jpg"
+        "rose-label.jpg"
       ],
       "ingredients": "CTC Black Tea (Camellia sinensis), Rose Petals (Rosa spp.)",
       "nutrition": [
@@ -46,28 +47,6 @@
         }
       ],
       "shelf_life": "Best before 12 months from manufacture",
-      "brew_steps": []
-    },
-    {
-      "name": "Rose Tea",
-      "badge": "",
-      "featured": false,
-      "hidden": false,
-      "description": "A fragrant blend of Assam tea and real rose petals. Smooth, floral and calming.",
-      "price": 99,
-      "size": "100 g",
-      "tags": [
-        "Floral",
-        "Bestseller"
-      ],
-      "images": [
-        "rose-jar.jpg",
-        "rose-open.jpg",
-        "rose-label.jpg"
-      ],
-      "ingredients": "Assam tea, real rose petals",
-      "nutrition": [],
-      "shelf_life": "",
       "brew_steps": []
     },
     {
@@ -105,7 +84,6 @@
       ],
       "images": [
         "elaichi-jar.jpg",
-        "ctc-elachi.jpg",
         "elaichi-open.jpg"
       ],
       "ingredients": "100% CTC tea powder with elachi (cardamom) flavour",
@@ -119,6 +97,46 @@
       ]
     },
     {
+      "name": "Masala Tea",
+      "badge": "",
+      "featured": false,
+      "hidden": false,
+      "description": "Assam CTC with whole Kerala spices: cinnamon, clove, cardamom, pepper and mace. Our everyday masala chai.",
+      "price": null,
+      "size": "",
+      "tags": [
+        "Spiced",
+        "Chai"
+      ],
+      "images": [
+        "masala-1.jpg",
+        "masala-2.jpg",
+        "masala-3.jpg"
+      ],
+      "ingredients": "Assam CTC Black Tea (Camellia sinensis), whole spices: cinnamon, clove, cardamom, black pepper, star anise and mace.",
+      "nutrition": [],
+      "shelf_life": "",
+      "brew_steps": []
+    },
+    {
+      "name": "Ginger Tea",
+      "badge": "New",
+      "featured": false,
+      "hidden": false,
+      "description": "Assam CTC with dried ginger for a warming, zesty cup. Perfect on rainy days.",
+      "price": null,
+      "size": "100 g",
+      "tags": [
+        "Warm",
+        "Chai"
+      ],
+      "images": [],
+      "ingredients": "Assam CTC Black Tea (Camellia sinensis), Dried Ginger",
+      "nutrition": [],
+      "shelf_life": "",
+      "brew_steps": []
+    },
+    {
       "name": "Clove Tea",
       "badge": "",
       "featured": false,
@@ -128,41 +146,6 @@
       "size": "",
       "tags": [
         "Bold"
-      ],
-      "images": [],
-      "ingredients": "",
-      "nutrition": [],
-      "shelf_life": "",
-      "brew_steps": []
-    },
-    {
-      "name": "Masala Tea",
-      "badge": "",
-      "featured": false,
-      "hidden": false,
-      "description": "Assam CTC with a blend of Kerala spices. Our everyday masala chai.",
-      "price": null,
-      "size": "",
-      "tags": [
-        "Spiced",
-        "Chai"
-      ],
-      "images": [],
-      "ingredients": "",
-      "nutrition": [],
-      "shelf_life": "",
-      "brew_steps": []
-    },
-    {
-      "name": "Mixed Spice Tea",
-      "badge": "",
-      "featured": false,
-      "hidden": false,
-      "description": "A mix of our Kerala spices in one jar, for when you want a bit of everything.",
-      "price": null,
-      "size": "",
-      "tags": [
-        "Spiced"
       ],
       "images": [],
       "ingredients": "",

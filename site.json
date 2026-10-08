@@ -36,25 +36,29 @@
     {
       "src": "assam-tea-garden.jpg",
       "alt": "Tea pickers with baskets in a green Assam tea garden",
-      "caption": "Tea gardens of Assam"
+      "caption": "Where every leaf begins",
+      "place": "Upper Assam · Tea country"
     },
     {
       "src": "kaziranga-rhino.jpg",
       "alt": "One-horned rhinos and wild buffalo in the grasslands of Kaziranga",
-      "caption": "Kaziranga National Park"
+      "caption": "Kaziranga",
+      "place": "26.58° N · 93.17° E"
     }
   ],
   "kerala_media": [
     {
       "src": "kerala-munnar.jpg",
       "alt": "Tea-covered hills of Munnar under a blue sky",
-      "caption": "The hills of Munnar"
+      "caption": "The hills of Munnar",
+      "place": "10.08° N · 77.06° E"
     },
     {
       "src": "kerala-video.mp4",
       "poster": "kerala-video-poster.jpg",
       "alt": "A walk through a Kerala garden",
-      "caption": "God's Own Country"
+      "caption": "God's Own Country",
+      "place": "Kerala · Spice gardens"
     }
   ]
 }
