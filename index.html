@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Originals by Lignio</title>
 <meta name="description" content="Assam tea blended with Kerala spices. Rose, Cinnamon, Elaichi, Clove, Masala, Mixed and Unflavoured CTC by Originals, a brand of Lignio Private Limited.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Assistant:wght@400;600;700;800&display=swap">
 <style>
@@ -386,6 +388,9 @@ h1,h2,h3{font-weight:700;letter-spacing:-.005em}
 .brand b{font:700 1.45rem var(--display)}
 .brand i{font:600 .95rem var(--body);color:var(--gold-hi)}
 .tabs a{border-radius:var(--r)}
+.brand{align-items:center;gap:8px}
+.brand .logo{width:44px;height:44px;border-radius:50%;display:block;flex:none}
+@media (max-width:760px){.brand .logo{width:36px;height:36px}.brand{gap:7px}}
 .mtabs a,.mtabs button{border-radius:var(--r)}
 .hero h1{font-weight:700;letter-spacing:-.015em}
 .hero h1 em{font-style:normal}
@@ -540,7 +545,7 @@ input,textarea{border-radius:var(--r)}
 <div class="offer">FREE delivery on orders of ₹899+<span class="hide-sm"> · Packed fresh in Assam &amp; Kerala</span></div>
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#home"><b>Originals</b><i>by Lignio</i></a>
+    <a class="brand" href="#home"><img class="logo" src="logo.png" alt="" width="44" height="44"><b>Originals</b><i>by Lignio</i></a>
     <nav class="tabs" aria-label="Main">
       <a href="#home">Home</a><a href="#blends">Our Blends</a><a href="#story">Our Story</a><a href="#order">Order</a>
     </nav>

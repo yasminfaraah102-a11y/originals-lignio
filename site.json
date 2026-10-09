@@ -27,7 +27,7 @@
   "kerala_image": "",
   "phone": "+91 82603 77370",
   "whatsapp": "918260377370",
-  "email": "aswathyacademic@gmail.com",
+  "email": "buy@thelignio.com",
   "ship_kerala_assam": 50,
   "ship_rest_india": 80,
   "ship_north_east": 100,
@@ -37,13 +37,13 @@
       "src": "assam-tea-garden.jpg",
       "alt": "Tea pickers with baskets in a green Assam tea garden",
       "caption": "Where every leaf begins",
-      "place": "Upper Assam · Tea country"
+      "place": "Upper Assam"
     },
     {
       "src": "kaziranga-rhino.jpg",
       "alt": "One-horned rhinos and wild buffalo in the grasslands of Kaziranga",
-      "caption": "Kaziranga",
-      "place": "26.58° N · 93.17° E"
+      "caption": "Home of the one-horned rhino",
+      "place": "Kaziranga, Assam"
     }
   ],
   "kerala_media": [
@@ -51,14 +51,14 @@
       "src": "kerala-munnar.jpg",
       "alt": "Tea-covered hills of Munnar under a blue sky",
       "caption": "The hills of Munnar",
-      "place": "10.08° N · 77.06° E"
+      "place": "Munnar, Kerala"
     },
     {
       "src": "kerala-video.mp4",
       "poster": "kerala-video-poster.jpg",
       "alt": "A walk through a Kerala garden",
       "caption": "God's Own Country",
-      "place": "Kerala · Spice gardens"
+      "place": "Kerala"
     }
   ]
 }
