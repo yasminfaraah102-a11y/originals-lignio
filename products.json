@@ -6,18 +6,15 @@
       "featured": true,
       "hidden": false,
       "description": "A fragrant blend of Assam tea and real rose petals. Smooth, floral and calming.",
-      "price": 99,
-      "size": "100 g",
+      "price": 149,
+      "size": "150 g",
       "tags": [
         "Floral",
         "Bestseller"
       ],
       "images": [
-        "rose-jar.jpg",
-        "rose-ctc-jar2.jpg",
-        "rose-ctc-open2.jpg",
-        "rose-open.jpg",
-        "rose-label.jpg"
+        "rose-jar-new.jpg",
+        "rose-open.jpg"
       ],
       "ingredients": "CTC Black Tea (Camellia sinensis), Rose Petals (Rosa spp.)",
       "nutrition": [
@@ -47,7 +44,9 @@
         }
       ],
       "shelf_life": "Best before 12 months from manufacture",
-      "brew_steps": []
+      "brew_steps": [],
+      "benefit_title": "Calm & Self-Care",
+      "benefit": "A delicate floral cup for relaxing moments and gentle period-day self-care."
     },
     {
       "name": "Cinnamon Tea",
@@ -55,20 +54,21 @@
       "featured": true,
       "hidden": false,
       "description": "Rich Assam tea with warm Kerala cinnamon. A cup that brings people together.",
-      "price": 89,
-      "size": "100 g",
+      "price": 129,
+      "size": "150 g",
       "tags": [
         "Warm",
         "Kerala spice"
       ],
       "images": [
-        "cinnamon.jpg",
-        "cinnamon-back.jpg"
+        "cinnamon-jar.jpg"
       ],
       "ingredients": "Assam CTC Black Tea (Camellia sinensis), Natural Cinnamon",
       "nutrition": [],
       "shelf_life": "",
-      "brew_steps": []
+      "brew_steps": [],
+      "benefit_title": "Period Comfort & Warmth",
+      "benefit": "Cinnamon may help ease mild menstrual cramps and support digestive comfort."
     },
     {
       "name": "Elaichi Tea",
@@ -76,17 +76,17 @@
       "featured": true,
       "hidden": false,
       "description": "Assam CTC with green cardamom. Strong, aromatic and perfect for milk chai.",
-      "price": null,
-      "size": "",
+      "price": 129,
+      "size": "150 g",
       "tags": [
         "Cardamom",
         "Chai"
       ],
       "images": [
-        "elaichi-jar.jpg",
+        "elaichi-jar-new.jpg",
         "elaichi-open.jpg"
       ],
-      "ingredients": "100% CTC tea powder with elachi (cardamom) flavour",
+      "ingredients": "Assam CTC Black Tea (Camellia sinensis), Cardamom (Elettaria cardamomum)",
       "nutrition": [],
       "shelf_life": "Best before 18 months from packaging",
       "brew_steps": [
@@ -94,16 +94,18 @@
         "Add 1 to 2 teaspoons of tea.",
         "Let it boil for 3 to 5 minutes.",
         "Add milk and sugar to taste. Boil 1 to 2 minutes and enjoy."
-      ]
+      ],
+      "benefit_title": "Gentle Digestive Comfort",
+      "benefit": "Fragrant cardamom is traditionally used to soothe digestive discomfort."
     },
     {
       "name": "Masala Tea",
       "badge": "",
-      "featured": false,
+      "featured": true,
       "hidden": false,
       "description": "Assam CTC with whole Kerala spices: cinnamon, clove, cardamom, pepper and mace. Our everyday masala chai.",
-      "price": null,
-      "size": "",
+      "price": 129,
+      "size": "150 g",
       "tags": [
         "Spiced",
         "Chai"
@@ -116,7 +118,9 @@
       "ingredients": "Assam CTC Black Tea (Camellia sinensis), whole spices: cinnamon, clove, cardamom, black pepper, star anise and mace.",
       "nutrition": [],
       "shelf_life": "",
-      "brew_steps": []
+      "brew_steps": [],
+      "benefit_title": "Warmth & Digestive Comfort",
+      "benefit": "A comforting spiced tea that may ease bloating and provide warmth during your period."
     },
     {
       "name": "Ginger Tea",
@@ -124,23 +128,93 @@
       "featured": false,
       "hidden": false,
       "description": "Assam CTC with dried ginger for a warming, zesty cup. Perfect on rainy days.",
-      "price": null,
-      "size": "100 g",
+      "price": 129,
+      "size": "150 g",
       "tags": [
         "Warm",
         "Chai"
       ],
-      "images": [],
-      "ingredients": "Assam CTC Black Tea (Camellia sinensis), Dried Ginger",
+      "images": [
+        "ginger-jar.jpg"
+      ],
+      "ingredients": "Assam CTC Black Tea (Camellia sinensis), Dry Ginger (Zingiber officinale)",
       "nutrition": [],
       "shelf_life": "",
-      "brew_steps": []
+      "brew_steps": [],
+      "benefit_title": "Period Comfort & Digestion",
+      "benefit": "Ginger may help ease menstrual cramps, nausea and occasional bloating."
+    },
+    {
+      "name": "Bay Leaf Tea",
+      "badge": "New",
+      "featured": false,
+      "hidden": false,
+      "description": "Assam CTC with natural bay leaf for a warm, soothing cup. Lovely after meals.",
+      "price": 129,
+      "size": "150 g",
+      "tags": [
+        "Herbal",
+        "Warm"
+      ],
+      "images": [
+        "bayleaf-jar.jpg"
+      ],
+      "ingredients": "Assam CTC Black Tea (Camellia sinensis), Bay Leaf (Cinnamomum tamala)",
+      "nutrition": [],
+      "shelf_life": "",
+      "brew_steps": [],
+      "benefit_title": "Lightness & Digestion",
+      "benefit": "A soothing herbal cup traditionally enjoyed after meals for digestive comfort."
+    },
+    {
+      "name": "Black Pepper Tea",
+      "badge": "New",
+      "featured": false,
+      "hidden": false,
+      "description": "Assam CTC with Kerala black pepper. Bold flavour, warmer moments.",
+      "price": 129,
+      "size": "150 g",
+      "tags": [
+        "Bold",
+        "Kerala spice"
+      ],
+      "images": [
+        "pepper-jar.jpg"
+      ],
+      "ingredients": "Assam CTC Black Tea (Camellia sinensis), Black Pepper (Piper nigrum)",
+      "nutrition": [],
+      "shelf_life": "",
+      "brew_steps": [],
+      "benefit_title": "Warming & Invigorating",
+      "benefit": "A bold, warming tea with naturally occurring antioxidant compounds."
+    },
+    {
+      "name": "CTC Leaf Tea",
+      "badge": "",
+      "featured": false,
+      "hidden": false,
+      "description": "Pure Assam CTC leaf tea. Rich taste, natural goodness, perfect for everyday chai.",
+      "price": 85,
+      "size": "150 g",
+      "tags": [
+        "Pure Assam",
+        "CTC"
+      ],
+      "images": [
+        "ctc-jar.jpg"
+      ],
+      "ingredients": "CTC Black Tea (Camellia sinensis)",
+      "nutrition": [],
+      "shelf_life": "",
+      "brew_steps": [],
+      "benefit_title": "Antioxidants & Relaxation",
+      "benefit": "Pure Assam CTC, naturally rich in tea polyphenols, for an everyday cup that helps you unwind."
     },
     {
       "name": "Clove Tea",
       "badge": "",
       "featured": false,
-      "hidden": false,
+      "hidden": true,
       "description": "Assam CTC with whole Kerala clove for a bold, warming cup.",
       "price": null,
       "size": "",
@@ -149,23 +223,6 @@
       ],
       "images": [],
       "ingredients": "",
-      "nutrition": [],
-      "shelf_life": "",
-      "brew_steps": []
-    },
-    {
-      "name": "Unflavoured CTC",
-      "badge": "",
-      "featured": false,
-      "hidden": false,
-      "description": "Pure Assam CTC black tea. Strong, malty and refreshing every day.",
-      "price": null,
-      "size": "",
-      "tags": [
-        "Pure Assam"
-      ],
-      "images": [],
-      "ingredients": "Assam CTC Black Tea (Camellia sinensis)",
       "nutrition": [],
       "shelf_life": "",
       "brew_steps": []

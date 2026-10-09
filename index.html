@@ -6,16 +6,16 @@
 <title>Originals by Lignio</title>
 <meta name="description" content="Assam tea blended with Kerala spices. Rose, Cinnamon, Elaichi, Clove, Masala, Mixed and Unflavoured CTC by Originals, a brand of Lignio Private Limited.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@500;600;700;800&family=Parisienne&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Assistant:wght@400;600;700;800&display=swap">
 <style>
 /* Layout: four views (Home, Blends, Our Story, Order). Dark tea-house hero with a tap-to-brew cup, label-paper product cards, illustrated Assam and Kerala scenes */
 :root{
   --leaf:#2c5a35; --gold:#a8752a; --rose:#8e2340; --tea:#2a1a12;
   --bg:#f7f0e4; --paper:#fffaf2; --ink:#1f140e; --muted:#4a3a2e; --line:#dcc9ab;
   --dark:#20140d; --dark-ink:#fbf1e0; --dark-muted:#e3d0b2; --chip:#efe1c9; --gold-hi:#e0b467;
-  --display:"Fraunces", "Iowan Old Style", Georgia, serif;
-  --body:"Karla", "Segoe UI", system-ui, sans-serif;
-  --script:"Parisienne", "Brush Script MT", cursive;
+  --display:"Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --body:"Assistant", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --script:"Libre Caslon Text", Georgia, serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --bg:#18110c; --paper:#231912; --ink:#fbf1e0; --muted:#dccab0; --line:#4a382a; --chip:#33251b;
@@ -331,6 +331,20 @@ textarea{min-height:72px;resize:vertical}
 .paid{background:#25a35a26;border:1px solid #25a35a;border-radius:14px;padding:14px 16px;color:#fff;font-weight:700;line-height:1.5}
 .paid b{display:block;font:600 1.3rem var(--display);margin-bottom:4px}
 #payBtn[disabled]{opacity:.6;cursor:wait}
+.well{background:var(--paper);border-block:1px solid var(--line)}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.wcard{display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:start;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:14px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:transform .2s,box-shadow .2s}
+.wcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px #2a1a1218}
+.wcard img,.wcard canvas{width:84px;height:104px;object-fit:cover;border-radius:10px;background:var(--chip);display:block}
+.wcard small{font:800 .66rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.wcard b{display:block;font:600 1.15rem/1.2 var(--display);margin:2px 0 4px}
+.wcard i{display:block;font-style:normal;font-weight:800;font-size:.86rem;color:var(--rose);margin-bottom:4px}
+.wcard p{font-size:.9rem;color:var(--muted);line-height:1.45}
+.wnote{margin-top:22px;font-size:.82rem;color:var(--muted);max-width:80ch}
+.wnote b{color:var(--ink)}
+.benefit{background:var(--chip);border-radius:12px;padding:12px 14px}
+.benefit b{display:block;color:var(--rose);font-size:.95rem}
+.benefit p{font-size:.92rem;margin-top:2px}
 /* modal */
 .modal{position:fixed;inset:0;z-index:60;background:#0b0604cc;display:grid;place-items:center;padding:16px}
 .sheet{background:var(--paper);color:var(--ink);border-radius:24px;max-width:940px;width:100%;max-height:calc(100% - 20px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}
@@ -360,6 +374,164 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 @media (max-width:720px){.foot{grid-template-columns:1fr}}
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--leaf);color:#fff;padding:10px 18px;border-radius:999px;font-weight:800;font-size:.92rem;z-index:70}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* ===== v2: cleaner, phone-first ===== */
+:root{--r:6px}
+body{font:400 17px/1.6 var(--body)}
+h1,h2,h3{font-weight:700;letter-spacing:-.005em}
+.eyebrow{font:700 .95rem var(--body);letter-spacing:0;text-transform:none;color:var(--rose);margin-bottom:6px}
+.dark .eyebrow{color:var(--gold-hi)}
+.btn{border-radius:var(--r);font-weight:700;letter-spacing:.01em}
+.btn:hover{transform:none;filter:brightness(1.06)}
+.brand b{font:700 1.45rem var(--display)}
+.brand i{font:600 .95rem var(--body);color:var(--gold-hi)}
+.tabs a{border-radius:var(--r)}
+.mtabs a,.mtabs button{border-radius:var(--r)}
+.hero h1{font-weight:700;letter-spacing:-.015em}
+.hero h1 em{font-style:normal}
+.brew-box{border-radius:10px;border-color:#e0b46733}
+.brew-hud span{border-radius:var(--r)}
+/* product cards */
+.pcard .pimg{border-radius:var(--r)}
+.pcard:hover .pimg img{transform:none}
+.pic .badge{border-radius:3px;letter-spacing:.02em;text-transform:none;font-size:.78rem;padding:3px 8px}
+.wish{border-radius:50%;box-shadow:0 1px 4px #0002}
+.pmeta{padding:10px 2px 0;gap:2px}
+.pmeta h3{font:700 1.02rem/1.3 var(--body);color:var(--ink)}
+.pmeta .pline{font-size:.9rem;color:var(--muted);line-height:1.35;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.pmeta .pr b{font-size:1.08rem}
+.quick{position:static;transform:none;margin-top:8px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:var(--r);box-shadow:none;padding:9px;font:700 .9rem var(--body)}
+.quick:hover{background:var(--ink);color:var(--bg)}
+.quick.in{background:var(--leaf);border-color:var(--leaf);color:#fff}
+.pcard:hover .quick{transform:none}
+.pcard.fssai{text-decoration:none;color:inherit}
+.pcard.fssai .pimg{background:#fff;border:1px solid var(--line)}
+.pcard.fssai .pimg img{width:100%;height:100%;object-fit:contain;display:block}
+.pcard.fssai .pline{-webkit-line-clamp:2}
+.pcard.fssai .quick{display:block;text-align:center}
+.card,.scene,.spice,.wcard,.panel,.cbox,.pinchk,.labels figure,.collage figure.m,.chapter .art,.tale-stage{border-radius:var(--r)}
+.tag{text-transform:none;letter-spacing:0;border-radius:3px}
+/* toolbar + chips */
+.chips{min-width:0;max-width:100%}
+.chip{border-radius:var(--r);font-weight:700;padding:7px 12px}
+.search{border-radius:var(--r)}
+.sort select{border-radius:var(--r)}
+/* wellness: plain cards, no box */
+.wgrid{grid-template-columns:repeat(4,1fr);gap:28px 22px}
+.wcard{display:flex;flex-direction:column;gap:10px;background:none;border:0;padding:0;border-radius:0}
+.wcard:hover{transform:none;box-shadow:none}
+.wcard:hover b{color:var(--rose)}
+.wcard img,.wcard canvas{width:100%;height:auto;aspect-ratio:1;border-radius:var(--r)}
+.wcard small{font:700 .85rem var(--body);letter-spacing:0;text-transform:none;color:var(--muted)}
+.wcard b{font:700 1.12rem/1.25 var(--display);margin:1px 0 4px}
+.wcard p{font-size:.95rem}
+.benefit{border-radius:var(--r);border-left:3px solid var(--rose)}
+/* origin scenes: photo + text, no box */
+.scene{background:none;border:0;border-radius:0}
+.scene>div:first-child{border-radius:var(--r);overflow:hidden}
+.scene .cap{padding:14px 0 0}
+.scene h3{font-size:1.4rem}
+figure.m figcaption small{font:600 .8rem var(--body);letter-spacing:.01em;text-transform:none}
+figure.m figcaption small::before{display:none}
+figure.m figcaption b{font:700 1.2rem/1.2 var(--display);font-style:normal}
+.labels figure{border-radius:var(--r)}
+.spice{background:none;border:0;padding:0}
+.spice b{font:700 1rem var(--body)}
+.spice small{display:block;line-height:1.35;font-size:.85rem;margin-top:2px}
+.story-top h2 .script{font-family:var(--display);font-style:italic;font-weight:400;font-size:.5em;color:var(--rose)}
+.tale-end p{font:italic 1.3rem var(--display)}
+.tale-play,.tale-play b{border-radius:var(--r)}
+.info h4{font:700 .95rem var(--body);letter-spacing:0;text-transform:none;color:var(--ink)}
+.size b{letter-spacing:0;text-transform:none;font-size:.9rem}
+.size span{border-radius:var(--r)}
+.btn-rose,.btn-line{border-radius:var(--r)}
+.sheet{border-radius:10px}
+.thumbs button{border-radius:4px}
+.close{border-radius:50%}
+label{letter-spacing:0;text-transform:none;font-size:.9rem;font-weight:700}
+input,textarea{border-radius:var(--r)}
+.cbox small{letter-spacing:0;text-transform:none;font-size:.85rem}
+.copy{border-radius:var(--r)}
+.paid{border-radius:var(--r)}
+.dfree{border-radius:var(--r)}
+.ic em,.mtabs em{border-radius:9px}
+.toast{border-radius:var(--r)}
+.step .n{font:700 2rem/1 var(--display)}
+@media (max-width:1000px){.wgrid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:761px){#featured{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- phone ---------- */
+@media (max-width:760px){
+  body{font-size:16px}
+  section{padding-block:40px}
+  .wrap{padding-inline:16px}
+  .sec-head{margin-bottom:18px;gap:6px}
+  .sec-head h2,.shop-head h2{font-size:1.65rem}
+  .sec-head p{font-size:.98rem}
+  .offer{font-size:.78rem;padding:6px 12px}
+  .nav{padding-block:8px}
+  .brand b{font-size:1.3rem}
+  /* hero */
+  .hero .wrap{padding-block:24px 28px;gap:22px}
+  .hero h1{font-size:2.3rem}
+  .hero .lead{font-size:1.02rem;margin:12px 0 18px}
+  .ctas{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .ctas .btn{padding:12px 10px;font-size:.95rem}
+  #brewCanvas{height:280px}
+  .brew-hud b{font-size:.95rem}
+  /* swipe rows: bestsellers, wellness, spices */
+  #featured,.wgrid,.spices{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-16px;padding:0 16px 6px;scroll-padding-inline:16px;scrollbar-width:none}
+  #featured::-webkit-scrollbar,.wgrid::-webkit-scrollbar,.spices::-webkit-scrollbar{display:none}
+  #featured>.pcard{flex:0 0 44%;scroll-snap-align:start}
+  .wgrid>.wcard{flex:0 0 44%;scroll-snap-align:start}
+  .wcard b{font-size:1rem}.wcard p{font-size:.88rem;line-height:1.4}.wcard small{font-size:.8rem}
+  .spices>.spice{flex:0 0 34%;scroll-snap-align:start}
+  .spice:last-child{grid-column:auto}
+  .more{margin-top:20px}
+  .more .btn{width:100%}
+  /* shop grid */
+  .grid.shop{grid-template-columns:1fr 1fr;gap:22px 12px}
+  .pmeta h3{font-size:.95rem}
+  .pmeta .pline{font-size:.84rem}
+  .quick{padding:8px;font-size:.85rem}
+  .shop-head{margin-bottom:12px}
+  .search{flex:1 1 100%}
+  .toolbar{display:grid;grid-template-columns:minmax(0,1fr);padding-block:10px;margin-bottom:18px;gap:10px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding:0 16px 2px;scroll-padding-inline:16px;max-width:none;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none;font-size:.85rem}
+  .sort{justify-content:space-between}
+  /* scenes + gallery */
+  .scenes{gap:26px}
+  .labels{gap:8px}
+  .steps{grid-template-columns:1fr 1fr;row-gap:22px}
+  .step{border-left:0;padding:0}
+  .step .n{font-size:1.6rem}
+  .step h3{font-size:1.1rem}
+  .step p{font-size:.92rem}
+  /* product sheet = bottom sheet */
+  .modal{padding:0;place-items:end stretch}
+  .sheet{border-radius:14px 14px 0 0;max-height:92vh;max-height:92dvh;grid-template-columns:1fr}
+  .gal{padding:10px}
+  .gal .main{max-height:48vh}
+  .thumbs{flex-wrap:nowrap;overflow-x:auto}
+  .thumbs button{flex:none;width:56px;height:56px}
+  .info{padding:18px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+  .info h2{font-size:1.6rem}
+  .acts{position:sticky;bottom:0;background:var(--paper);padding-block:8px;margin-inline:-16px;padding-inline:16px;border-top:1px solid var(--line)}
+  /* order */
+  .panel{padding:16px}
+  .actions{display:grid}
+  .actions .btn{width:100%}
+  .contact{grid-template-columns:1fr}
+  /* footer */
+  footer{padding-block:32px 24px;font-size:.92rem}
+  .foot{gap:16px}
+  .foot img{width:72px}
+  .policies{display:grid;gap:10px;margin-top:20px}
+  .legal{display:grid;gap:6px}
+}
+@media (max-width:380px){#featured>.pcard{flex-basis:48%}.ctas{grid-template-columns:1fr}}
 </style>
 
 
@@ -392,8 +564,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
         <div class="eyebrow" data-c="hero_eyebrow">Assam tea · Kerala spices</div>
         <h1><span data-c="hero_title">Bold roots,</span> <em data-c="hero_title_accent">warm stories.</em></h1>
         <p class="lead" data-c="hero_text">Strong CTC from the tea gardens of Assam, blended with real rose petals and spices from Kerala. Real leaves. Real goodness.</p>
-        <div class="ctas"><a class="btn btn-gold" href="#blends">Shop the blends</a><a class="btn btn-ghost" href="#story">▶ Watch our story</a></div>
-        <div class="origin"><span class="as">Rooted in Assam</span><span class="kl">Inspired by Kerala</span></div>
+        <div class="ctas"><a class="btn btn-gold" href="#blends">Shop the blends</a><a class="btn btn-ghost" href="#story">Our story</a></div>
       </div>
       <div class="brew-box">
         <canvas id="brewCanvas" aria-label="Tap the floating tea leaves and spices to brew a cup"></canvas>
@@ -414,6 +585,14 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
     </div>
   </section>
 
+  <section class="well" id="wellness">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="eyebrow">Sip for wellness</div><h2>A flavour for every mood, a cup for every moment</h2></div><p>Each blend draws on spices long used in Indian kitchens for comfort and warmth.</p></div>
+      <div class="wgrid" id="wgrid"></div>
+      <p class="wnote"><b>Wellness note:</b> These descriptions refer to traditional uses or possible benefits of the ingredients, not proven effects of each tea blend. Our teas do not treat menstrual disorders, infections or other medical conditions. If you are pregnant, nursing or on medication, check with your doctor.</p>
+    </div>
+  </section>
+
   <section class="paper">
     <div class="wrap">
       <div class="sec-head"><div><div class="eyebrow">Two homes</div><h2>From the Brahmaputra to the Western Ghats</h2></div><p>Our tea grows near the grasslands of Kaziranga. Our spices come from the hills of Kerala.</p></div>
@@ -429,10 +608,10 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
     <div class="wrap">
       <div class="sec-head"><div><div class="eyebrow">Made with care</div><h2>Packed by hand, labelled with love</h2></div></div>
       <div class="labels">
-        <figure><img src="rose-label.jpg" alt="Rose Tea label with the two founders" loading="lazy"></figure>
+        <figure><img src="rose-jar-new.jpg" alt="Rose Tea jar" loading="lazy"></figure>
         <figure><img src="rose-open.jpg" alt="Open jar of rose tea with real petals" loading="lazy"></figure>
-        <figure><img src="rose-ctc-front.jpg" alt="Rose CTC Tea pink label" loading="lazy"></figure>
-        <figure><img src="originals-seal.jpg" alt="Originals seal with a steaming cup and spices" loading="lazy"></figure>
+        <figure><img src="cinnamon-jar.jpg" alt="Cinnamon Tea jar" loading="lazy"></figure>
+        <figure><img src="masala-1.jpg" alt="Whole spices for Masala Tea" loading="lazy"></figure>
       </div>
     </div>
   </section>
@@ -511,7 +690,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
 <div class="view" id="v-order">
   <section class="dark">
     <div class="wrap">
-      <div class="sec-head"><div><div class="eyebrow">Order</div><h2>Place your order</h2></div><p>Pick your blends, add your address and send the order to us on WhatsApp. We confirm the total, delivery and payment there.</p></div>
+      <div class="sec-head"><div><div class="eyebrow">Order</div><h2>Place your order</h2></div><p>Add your address, then pay online by UPI or card. You can also send the order to us on WhatsApp.</p></div>
       <div class="desk">
         <div class="panel">
           <h3>Your order</h3>
@@ -545,7 +724,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
       </div>
       <div class="contact">
         <div class="cbox"><div><small>Phone / WhatsApp</small><b data-c="phone">+91 82603 77370</b></div><button class="copy" type="button" id="copyPhone" data-copy="+91 82603 77370">Copy</button></div>
-        <div class="cbox"><div><small>Email</small><b data-c="email">aswathyacademic@gmail.com</b></div><button class="copy" type="button" id="copyEmail" data-copy="aswathyacademic@gmail.com">Copy</button></div>
+        <div class="cbox"><div><small>Email</small><b data-c="email">buy@thelignio.com</b></div><button class="copy" type="button" id="copyEmail" data-copy="buy@thelignio.com">Copy</button></div>
       </div>
     </div>
   </section>
@@ -562,7 +741,7 @@ footer{padding-block:44px;font-size:.95rem;color:var(--muted)}
       <div><b>Assam unit</b>Ghoramara, Amingaon, Kamrup, Assam 781031</div>
     </div>
     <nav class="policies"><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation</a><a href="shipping.html">Shipping &amp; Delivery</a><a href="contact.html">Contact Us</a></nav>
-    <div class="legal"><span>CIN U16211KL2026PTC105032 · FSSAI Lic. No. 21326204000609</span><span>© 2026 Originals by Lignio. Made in India.</span></div>
+    <div class="legal"><span>CIN U16211KL2026PTC105032 · FSSAI Reg. No. <a href="https://foscos.fssai.gov.in/display-details/126448059/REG/737176579" target="_blank" rel="noopener">21326204000609</a></span><span>© 2026 Originals by Lignio. Made in India.</span></div>
   </div>
 </footer>
 
@@ -627,15 +806,17 @@ const HEART=`<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke=
 let wish=[];try{wish=JSON.parse(localStorage.getItem("orig_wish")||"[]")||[]}catch(e){wish=[]}
 const saveWish=()=>{try{localStorage.setItem("orig_wish",JSON.stringify(wish))}catch(e){}};
 let filt="All",q="",sortBy="rec";
+const FSSAI_CARD=`<a class="pcard fssai" href="https://foscos.fssai.gov.in/display-details/126448059/REG/737176579" target="_blank" rel="noopener"><div class="pimg"><img src="fssai-qr.jpg" alt="FSSAI registration QR code, Reg. No. 21326204000609" loading="lazy"></div><div class="pmeta"><h3>FSSAI registered</h3><span class="pline">Reg. No. 21326204000609</span><span class="quick">Verify on FSSAI</span></div></a>`;
 function card(p){
  const pic=p.imgs?`<img src="${p.imgs[0]}" alt="${p.name} jar" loading="lazy">`:`<span data-art="${p.id}"></span><span class="soon">Photo coming soon</span>`;
  const w=wish.includes(p.id);
  return `<article class="pcard">
   <div class="pimg"><button class="pic" type="button" data-open="${p.id}" aria-label="View ${p.name}">${pic}</button>${p.badge?`<span class="badge">${p.badge}</span>`:""}
    <button class="wish" type="button" data-wish="${p.id}" aria-pressed="${w}" aria-label="${w?"Remove from":"Add to"} wishlist">${HEART}</button>
-   <button class="quick ${cart[p.id]?"in":""}" type="button" data-add="${p.id}">${BAGI}${cart[p.id]?"In bag · "+cart[p.id]:"Add to bag"}</button></div>
-  <div class="pmeta"><span class="brandname">Originals</span><h3><button type="button" data-open="${p.id}">${p.name}</button></h3>
-   <div class="pr">${p.price?`<b>${inr(p.price)}</b><small>${p.size||"100 g"}</small>`:`<span class="ask">Price on request</span>`}</div></div>
+  </div>
+  <div class="pmeta"><h3><button type="button" data-open="${p.id}">${p.name}</button></h3>${p.bt?`<span class="pline">${p.bt}</span>`:""}
+   <div class="pr">${p.price?`<b>${inr(p.price)}</b><small>${p.size||"100 g"}</small>`:`<span class="ask">Price on request</span>`}</div>
+   <button class="quick ${cart[p.id]?"in":""}" type="button" data-add="${p.id}">${cart[p.id]?"In bag · "+cart[p.id]:"Add to bag"}</button></div>
  </article>`}
 function fillArt(root){root.querySelectorAll("[data-art]").forEach((el,i)=>{const p=P(el.dataset.art);el.replaceWith(artCanvas(p.art,7+PRODUCTS.indexOf(p)*31))})}
 function shopList(){let L=PRODUCTS.slice();
@@ -649,11 +830,12 @@ function renderChips(){const tags=[];PRODUCTS.forEach(p=>p.tags.forEach(t=>{if(!
  $("#chips").innerHTML=all.map(t=>`<button class="chip" type="button" data-chip="${t}" aria-pressed="${t===filt}">${t==="Wishlist"?"♥ Wishlist":t}</button>`).join("")}
 function renderCards(){
  const L=shopList();
- $("#grid").innerHTML=L.length?L.map(card).join(""):`<p class="empty-shop">${filt==="Wishlist"?"Your wishlist is empty. Tap the ♥ on any blend to save it here.":"No blends match that. Try another word or filter."}</p>`;fillArt($("#grid"));
+ $("#grid").innerHTML=L.length?L.map(card).join("")+(filt==="All"&&!q?FSSAI_CARD:""):`<p class="empty-shop">${filt==="Wishlist"?"Your wishlist is empty. Tap the ♥ on any blend to save it here.":"No blends match that. Try another word or filter."}</p>`;fillArt($("#grid"));
  $("#featured").innerHTML=PRODUCTS.filter(p=>p.featured).map(card).join("");fillArt($("#featured"));
  $("#count").textContent=L.length+(L.length===1?" blend":" blends");
  $("#shopTitle").textContent=filt==="Wishlist"?"Your wishlist":filt==="All"?"All tea blends":filt+" blends";
  renderChips();
+ const wl=PRODUCTS.filter(p=>p.bt);$("#wgrid").innerHTML=wl.map(p=>`<button class="wcard" type="button" data-open="${p.id}">${p.imgs?`<img src="${p.imgs[0]}" alt="" loading="lazy">`:`<span data-art="${p.id}"></span>`}<span class="wtx"><small>${p.name}</small><b>${p.bt}</b><p>${p.bn}</p></span></button>`).join("");fillArt($("#wgrid"));
  const wc=$("#wishCount");wc.textContent=wish.length;wc.hidden=!wish.length;
 }
 function renderBag(){const ids=Object.keys(cart).filter(k=>cart[k]>0);let sub=0;ids.forEach(id=>{const p=P(id);if(p.price)sub+=p.price*cart[id]});
@@ -684,6 +866,7 @@ function openProduct(id){const p=P(id);const imgs=p.imgs||[];
   <div class="size"><b>Size</b><span>${p.size||"100 g"}</span></div>
   <div class="acts"><button class="btn btn-rose" type="button" data-add="${p.id}" data-then-bag>${BAGI} Add to bag</button><button class="btn btn-line" type="button" data-wish="${p.id}" aria-pressed="${wish.includes(p.id)}">${HEART} Wishlist</button></div>
   <div class="pinchk"><h4 style="margin:0">Check delivery</h4><div class="row"><input id="mPin" inputmode="numeric" maxlength="6" placeholder="Enter PIN code" aria-label="PIN code"><button type="button" id="mPinBtn">Check</button></div><p id="mPinOut">Free delivery on orders of ₹899 and above.</p></div>
+  ${p.bt?`<div class="benefit"><b>${p.bt}</b><p>${p.bn}</p></div>`:""}
   ${p.ing?`<div><h4>Ingredients</h4><p>${p.ing}</p></div>`:""}
   ${p.nut?`<div><h4>Nutrition (approx. per 100 g)</h4><table class="nut">${p.nut.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join("")}</table></div>`:""}
   <div><h4>How to brew</h4><ol style="margin:0;padding-left:20px">${brew.map(b=>`<li>${b}</li>`).join("")}</ol></div>
@@ -790,7 +973,7 @@ assam:`<svg viewBox="0 0 600 340" role="img" aria-label="Illustration of Assam: 
 </g>
 <g>${Array.from({length:6},(_,r)=>`<path d="M-20 ${282+r*12} ${Array.from({length:14},(_,i)=>`q22 -${10+(r%2)*3} 46 0`).join(" ")}" fill="#2f6b3b" stroke="#245a2f" stroke-width="2"/>`).join("")}</g>
 <rect y="318" width="600" height="22" fill="#245a2f"/>
-<g fill="#5a3a1c" font-family="Karla, sans-serif" font-weight="800" font-size="13" letter-spacing="2"><text x="20" y="30">KAZIRANGA · ASSAM</text></g>
+<g fill="#5a3a1c" font-family="Assistant, sans-serif" font-weight="800" font-size="13" letter-spacing="2"><text x="20" y="30">KAZIRANGA · ASSAM</text></g>
 </svg>`,
 kerala:`<svg viewBox="0 0 600 340" role="img" aria-label="Illustration of Kerala: misty Western Ghats hills with tea terraces, coconut palms and backwaters">
 <defs><linearGradient id="kl1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfe3df"/><stop offset="1" stop-color="#eef0dc"/></linearGradient>
@@ -807,7 +990,7 @@ kerala:`<svg viewBox="0 0 600 340" role="img" aria-label="Illustration of Kerala
 ${[[70,250,1],[120,258,.85],[520,246,1.05],[470,262,.8]].map(([x,y,s])=>`<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 0 Q-8 -60 6 -120" stroke="#6b4a2c" stroke-width="7" fill="none" stroke-linecap="round"/>
 ${[-150,-110,-70,-30,10,40].map(a=>`<path d="M6 -120 q${Math.cos(a*Math.PI/180)*30} ${Math.sin(a*Math.PI/180)*30-10} ${Math.cos(a*Math.PI/180)*58} ${Math.sin(a*Math.PI/180)*58+10}" stroke="#2f6b3b" stroke-width="6" fill="none" stroke-linecap="round"/>`).join("")}
 <circle cx="4" cy="-116" r="5" fill="#8a6a2a"/><circle cx="12" cy="-112" r="5" fill="#8a6a2a"/></g>`).join("")}
-<g fill="#1f4a46" font-family="Karla, sans-serif" font-weight="800" font-size="13" letter-spacing="2"><text x="20" y="30">WESTERN GHATS · KERALA</text></g>
+<g fill="#1f4a46" font-family="Assistant, sans-serif" font-weight="800" font-size="13" letter-spacing="2"><text x="20" y="30">WESTERN GHATS · KERALA</text></g>
 </svg>`};
 function mediaEl(m,cls){const src=esc(m.src),alt=esc(m.alt||"");
  return /\.(mp4|webm|mov)$/i.test(m.src)
@@ -878,7 +1061,7 @@ function esc(v){return String(v??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt
 const slug=v=>v.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 function artFor(n){n=n.toLowerCase();if(n.includes("ginger"))return["ginger","leaf"];if(n.includes("clove"))return["clove","leaf"];if(n.includes("masala"))return["cinnamon","cardamom","clove","anise"];if(n.includes("mix"))return["cardamom","clove","cinnamon","petal"];if(n.includes("cinnamon"))return["cinnamon","leaf"];if(n.includes("rose"))return["petal","leaf"];if(n.includes("elaichi")||n.includes("cardamom"))return["cardamom","leaf"];return["leaf"]}
 function normalize(list){return(list||[]).filter(p=>p&&p.name&&!p.hidden).map(p=>{const imgs=(p.images||[]).map(i=>typeof i==="string"?i:(i&&i.image)).filter(Boolean);const steps=(p.brew_steps||[]).filter(Boolean);const nut=(p.nutrition||[]).filter(r=>r&&r.label);
- return{id:slug(p.name),raw:p.name,name:esc(p.name),badge:esc(p.badge),featured:!!p.featured,desc:esc(p.description),price:p.price?Number(p.price):null,size:esc(p.size),tags:(p.tags||[]).filter(Boolean).map(esc),imgs:imgs.length?imgs.map(esc):null,ing:esc(p.ingredients),nut:nut.length?nut.map(r=>[esc(r.label),esc(r.value)]):null,life:esc(p.shelf_life),brew:steps.length?steps.map(esc):null,art:artFor(p.name)}})}
+ return{bt:esc(p.benefit_title||""),bn:esc(p.benefit||""),id:slug(p.name),raw:p.name,name:esc(p.name),badge:esc(p.badge),featured:!!p.featured,desc:esc(p.description),price:p.price?Number(p.price):null,size:esc(p.size),tags:(p.tags||[]).filter(Boolean).map(esc),imgs:imgs.length?imgs.map(esc):null,ing:esc(p.ingredients),nut:nut.length?nut.map(r=>[esc(r.label),esc(r.value)]):null,life:esc(p.shelf_life),brew:steps.length?steps.map(esc):null,art:artFor(p.name)}})}
 function applySite(){
  document.querySelectorAll("[data-c]").forEach(el=>{const v=SITE[el.dataset.c];if(v)el.textContent=v});
  document.querySelectorAll("[data-list]").forEach(el=>{el.replaceChildren(...(SITE[el.dataset.list]||[]).filter(Boolean).map(t=>{const li=document.createElement("li");li.textContent=t;return li}))});
