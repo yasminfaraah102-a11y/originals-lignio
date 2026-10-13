@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lignio Private Limited · Wood and plastic, reborn</title>
+<meta name="description" content="Lignio Private Limited turns sawdust, wood waste and natural fibres with waste polypropylene into wood-plastic composite (WPC) products, using a low-water process. Also home of Originals by Lignio tea.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Assistant:wght@400;600;700;800&display=swap">
+<style>
+:root{--bg:#f4f0e8;--paper:#fffdf8;--ink:#1d1a14;--muted:#4d463b;--line:#d9cfbd;--wood:#9a6a3c;--leaf:#2f6b3f;--dark:#1d2a22;--dark-ink:#f3efe6;--dark-muted:#cfd8cf;--r:6px;
+ --display:"Libre Caslon Text",Georgia,serif;--body:"Assistant",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14120e;--paper:#1d1a15;--ink:#f1ece2;--muted:#cbc2b3;--line:#3b352b;--wood:#d7a46f;--leaf:#8fc79d;--dark:#0f1712;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#14120e;--paper:#1d1a15;--ink:#f1ece2;--muted:#cbc2b3;--line:#3b352b;--wood:#d7a46f;--leaf:#8fc79d;--dark:#0f1712;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.15;margin:0;text-wrap:balance}
+p{margin:0}a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+.eyebrow{font:700 .95rem var(--body);color:var(--wood);margin-bottom:8px}
+.dark .eyebrow{color:#e0b467}
+section{padding-block:64px}
+.btn{display:inline-flex;align-items:center;justify-content:center;font:700 1rem var(--body);border-radius:var(--r);padding:13px 22px;text-decoration:none;border:1.5px solid transparent}
+.btn-light{background:#f3efe6;color:#1d2a22}.btn-ghost{border-color:currentColor;color:inherit}
+/* header */
+header{position:sticky;top:0;z-index:20;background:var(--dark);color:var(--dark-ink);border-bottom:1px solid #ffffff1a}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:8px}
+.brand b{font:700 1.4rem var(--display)}.brand i{font:600 .9rem var(--body);font-style:normal;color:var(--dark-muted)}
+.links{display:flex;gap:4px;align-items:center}
+.links a{text-decoration:none;font-weight:700;font-size:.95rem;padding:8px 12px;border-radius:var(--r);color:var(--dark-muted)}
+.links a:hover{color:#fff;background:#ffffff14}
+.links a.shop{color:#1d2a22;background:#e0b467}
+/* hero */
+.hero{background:var(--dark);color:var(--dark-ink);padding-block:56px 64px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);letter-spacing:-.015em}
+.hero h1 em{font-style:normal;color:#e0b467}
+.hero .lead{font-size:1.15rem;color:var(--dark-muted);margin:18px 0 26px;max-width:40ch}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.art{border-radius:10px;overflow:hidden;background:#24352b;border:1px solid #ffffff1f}
+.art svg{display:block;width:100%;height:auto}
+/* blocks */
+.head{max-width:640px;margin-bottom:30px}
+.head h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.head p{color:var(--muted);margin-top:12px;font-size:1.05rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.prob{padding:22px 0;border-top:2px solid var(--ink)}
+.prob h3{font-size:1.3rem;margin-bottom:8px}
+.prob p{color:var(--muted)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.steps li{counter-increment:s;padding-top:14px;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s,decimal-leading-zero);display:block;font:700 1.6rem/1 var(--display);color:var(--wood);margin-bottom:10px}
+.steps b{display:block;font-size:1.08rem;margin-bottom:4px}
+.steps p{color:var(--muted);font-size:.96rem}
+.paper{background:var(--paper);border-block:1px solid var(--line)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.feat h3{font-size:1.15rem;margin-bottom:6px}
+.feat p{color:var(--muted);font-size:.98rem}
+.feat .k{display:block;width:28px;height:3px;background:var(--leaf);margin-bottom:12px}
+.uses{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.uses span{border:1px solid var(--line);background:var(--bg);border-radius:var(--r);padding:8px 14px;font-weight:700;font-size:.95rem}
+.stage{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--paper)}
+.stage div{padding:18px 20px;border-left:1px solid var(--line)}
+.stage div:first-child{border-left:0}
+.stage small{display:block;color:var(--muted);font-weight:700;font-size:.85rem}
+.stage b{font:700 1.15rem var(--display)}
+.stage .on{background:var(--leaf);color:#fff}.stage .on small{color:#e6f2e9}
+/* tea */
+.tea{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center}
+.tea img{width:100%;max-width:340px;border-radius:var(--r);display:block;justify-self:center}
+.tea p{color:var(--muted);margin:12px 0 20px}
+.btn-dark{background:var(--ink);color:var(--bg)}
+/* company */
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--line)}
+.facts div{padding:16px 0;border-bottom:1px solid var(--line);padding-right:16px}
+.facts small{display:block;color:var(--muted);font-weight:700;font-size:.85rem}
+.facts b{font-weight:600}
+footer{padding-block:30px;font-size:.92rem;color:var(--muted);border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer nav{display:flex;gap:6px 18px;flex-wrap:wrap}footer a{color:var(--ink);font-weight:700}
+@media (max-width:820px){
+ section{padding-block:44px}
+ .wrap{padding-inline:16px}
+ .hero{padding-block:30px 40px}.hero .wrap{grid-template-columns:1fr;gap:26px}
+ .hero h1{font-size:2.35rem}.hero .lead{font-size:1.02rem}
+ .ctas{display:grid;grid-template-columns:1fr 1fr}
+ .two,.grid3,.tea{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .stage{grid-template-columns:1fr}.stage div{border-left:0;border-top:1px solid var(--line)}.stage div:first-child{border-top:0}
+ .facts{grid-template-columns:1fr}
+ .links a:not(.shop){display:none}
+ .brand b{font-size:1.2rem}.brand i{display:none}
+ .head{margin-bottom:20px}
+}
+@media (max-width:380px){.ctas{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+</style></head><body>
+
+<header><div class="wrap nav">
+  <a class="brand" href="#top"><b>Lignio</b><i>Private Limited</i></a>
+  <nav class="links" aria-label="Main"><a href="#wpc">What we make</a><a href="#process">Process</a><a href="#company">Company</a><a class="shop" href="index.html">Tea shop</a></nav>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Lignio Private Limited</div>
+      <h1>Wood and plastic, <em>reborn.</em></h1>
+      <p class="lead">We turn sawdust, wood waste and natural fibres, together with waste polypropylene, into durable wood-plastic composite (WPC) products, using a low-water process.</p>
+      <div class="ctas"><a class="btn btn-light" href="#wpc">What we make</a><a class="btn btn-ghost" href="mailto:buy@thelignio.com">Contact us</a></div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 480 340">
+        <defs>
+          <pattern id="fleck" width="22" height="14" patternUnits="userSpaceOnUse"><rect width="22" height="14" fill="#8b6340"/><ellipse cx="5" cy="4" rx="3" ry="1.2" fill="#a97a4e"/><ellipse cx="15" cy="10" rx="4" ry="1.3" fill="#6f4c2f"/><circle cx="18" cy="3" r="1" fill="#c39462"/></pattern>
+          <pattern id="fleck2" width="26" height="12" patternUnits="userSpaceOnUse"><rect width="26" height="12" fill="#6e5038"/><ellipse cx="7" cy="6" rx="5" ry="1.3" fill="#86613f"/><circle cx="20" cy="4" r="1.2" fill="#a07750"/></pattern>
+        </defs>
+        <rect width="480" height="340" fill="#24352b"/>
+        <g opacity=".9">
+          <circle cx="80" cy="70" r="5" fill="#c39462"/><circle cx="104" cy="58" r="3" fill="#e0b467"/><circle cx="94" cy="86" r="4" fill="#a97a4e"/><circle cx="122" cy="78" r="2.5" fill="#c39462"/>
+          <rect x="350" y="56" width="16" height="10" rx="2" fill="#7fb2c9"/><rect x="372" y="70" width="12" height="9" rx="2" fill="#e8e3d6"/><rect x="390" y="54" width="14" height="9" rx="2" fill="#9fc7a6"/>
+          <path d="M140 76 Q200 60 222 120" stroke="#e0b467" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+          <path d="M346 70 Q290 64 262 120" stroke="#7fb2c9" stroke-width="2" fill="none" stroke-dasharray="5 6"/>
+        </g>
+        <g transform="translate(70 140)">
+          <path d="M0 40 L300 0 L340 22 L40 64Z" fill="#a37a52"/>
+          <path d="M40 64 L340 22 L340 52 L40 94Z" fill="url(#fleck)"/>
+          <path d="M0 40 L40 64 L40 94 L0 70Z" fill="#5d4229"/>
+          <path d="M0 96 L300 56 L340 78 L40 120Z" fill="#8f6a47"/>
+          <path d="M40 120 L340 78 L340 108 L40 150Z" fill="url(#fleck2)"/>
+          <path d="M0 96 L40 120 L40 150 L0 126Z" fill="#4c3622"/>
+          <g stroke="#00000033" stroke-width="2"><path d="M70 66 L360 26" transform="translate(-20 6)"/><path d="M70 122 L360 82" transform="translate(-20 6)"/></g>
+        </g>
+        <text x="24" y="318" fill="#cfd8cf" font-family="Assistant, sans-serif" font-size="15" font-weight="700">Wood waste + waste PP → WPC boards</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">The problem</div><h2>Two kinds of waste that rarely get a second life</h2></div>
+    <div class="two">
+      <div class="prob"><h3>Wood waste</h3><p>Sawmills and furniture units produce large amounts of sawdust, offcuts and fibre. Most of it is burnt or dumped.</p></div>
+      <div class="prob"><h3>Waste polypropylene</h3><p>Used PP packaging, sacks and containers often end up in landfill or open burning instead of being recycled into something useful.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="paper" id="wpc">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">What we make</div><h2>Wood-plastic composites from waste</h2><p>Lignio combines wood flour and natural fibres with recycled polypropylene to make WPC: a material that looks and works like wood, without cutting a single tree for it.</p></div>
+    <div class="grid3">
+      <div class="feat"><span class="k"></span><h3>Made from waste</h3><p>Both main inputs, wood waste and waste PP, are by-products that would otherwise be burnt or landfilled.</p></div>
+      <div class="feat"><span class="k"></span><h3>Low-water process</h3><p>Our dry compounding and forming route uses very little water compared with conventional wood-panel processing.</p></div>
+      <div class="feat"><span class="k"></span><h3>Built for Indian weather</h3><p>WPC handles moisture better than plain wood, which makes it a good fit for humid regions like Assam and Kerala.</p></div>
+    </div>
+    <h3 style="margin:36px 0 12px;font-size:1.2rem">Where it can be used</h3>
+    <div class="uses"><span>Decking &amp; flooring</span><span>Wall &amp; ceiling panels</span><span>Furniture parts</span><span>Fencing &amp; railings</span><span>Door &amp; window frames</span><span>Garden products</span></div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">How it works</div><h2>From waste to board in four steps</h2></div>
+    <ol class="steps">
+      <li><b>Collect</b><p>Sawdust, wood waste and fibres from local mills; post-use PP from scrap collectors.</p></li>
+      <li><b>Prepare</b><p>Wood is dried and sized into fine flour. PP is cleaned, sorted and shredded.</p></li>
+      <li><b>Compound</b><p>Wood flour and PP are blended with small amounts of processing aids into a uniform composite.</p></li>
+      <li><b>Form</b><p>The composite is shaped into boards, panels and profiles, then cooled and finished.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="paper">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Why it matters</div><h2>A small circular economy, close to the source</h2></div>
+    <div class="grid3">
+      <div class="feat"><span class="k"></span><h3>Less burning, less landfill</h3><p>Every board keeps wood waste and plastic out of open fires and dumps.</p></div>
+      <div class="feat"><span class="k"></span><h3>Saves timber</h3><p>WPC can replace solid wood in many everyday uses, easing pressure on forests.</p></div>
+      <div class="feat"><span class="k"></span><h3>Local value</h3><p>Sourcing waste from nearby mills and scrap collectors creates income from material that was thrown away.</p></div>
+    </div>
+    <h3 style="margin:40px 0 14px;font-size:1.2rem">Where we are</h3>
+    <div class="stage">
+      <div class="on"><small>Now</small><b>Research &amp; formulation</b></div>
+      <div><small>Next</small><b>Prototypes &amp; testing</b></div>
+      <div><small>Then</small><b>Pilot production</b></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap tea">
+    <img src="rose-jar-new.jpg" alt="A jar of Originals by Lignio Rose Tea" loading="lazy">
+    <div>
+      <div class="eyebrow">Also from Lignio</div>
+      <h2>Originals by Lignio</h2>
+      <p>Our consumer brand blends strong Assam CTC tea with real spices from Kerala: rose, cinnamon, elaichi, masala, ginger and more, packed in-house.</p>
+      <a class="btn btn-dark" href="index.html">Visit the tea shop</a>
+    </div>
+  </div>
+</section>
+
+<section class="paper" id="company">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Company</div><h2>Lignio Private Limited</h2></div>
+    <div class="facts">
+      <div><small>CIN</small><b>U16211KL2026PTC105032</b></div>
+      <div><small>Registered office</small><b>Vennukkaran House, Anthrekkapadam, Mothirakkanni, Mukundapuram, Thrissur 680724, Kerala</b></div>
+      <div><small>Assam unit</small><b>Ghoramara, Amingaon, Kamrup, Assam 781031</b></div>
+      <div><small>Contact</small><b><a href="mailto:buy@thelignio.com">buy@thelignio.com</a> · <a href="tel:+918260377370">+91 82603 77370</a></b></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Lignio Private Limited. Made in India.</span>
+  <nav><a href="index.html">Tea shop</a><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="contact.html">Contact</a></nav>
+</div></footer>
+</body></html>

@@ -547,7 +547,7 @@ input,textarea{border-radius:var(--r)}
   <div class="wrap nav">
     <a class="brand" href="#home"><img class="logo" src="logo.png" alt="" width="44" height="44"><b>Originals</b><i>by Lignio</i></a>
     <nav class="tabs" aria-label="Main">
-      <a href="#home">Home</a><a href="#blends">Our Blends</a><a href="#story">Our Story</a><a href="#order">Order</a>
+      <a href="#home">Home</a><a href="#blends">Our Blends</a><a href="#story">Our Story</a><a href="#order">Order</a><a href="lignio.html">About Lignio</a>
     </nav>
     <div class="icons">
       <a class="ic" href="#blends" data-focus-search aria-label="Search blends"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>Search</span></a>
@@ -745,7 +745,7 @@ input,textarea{border-radius:var(--r)}
       <div><b>Lignio Private Limited</b>Vennukkaran House, Anthrekkapadam, Mothirakkanni, Mukundapuram, Thrissur 680724, Kerala</div>
       <div><b>Assam unit</b>Ghoramara, Amingaon, Kamrup, Assam 781031</div>
     </div>
-    <nav class="policies"><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation</a><a href="shipping.html">Shipping &amp; Delivery</a><a href="contact.html">Contact Us</a></nav>
+    <nav class="policies"><a href="lignio.html">About Lignio Pvt Ltd</a><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a><a href="refund.html">Refund &amp; Cancellation</a><a href="shipping.html">Shipping &amp; Delivery</a><a href="contact.html">Contact Us</a></nav>
     <div class="legal"><span>CIN U16211KL2026PTC105032 · FSSAI Reg. No. <a href="https://foscos.fssai.gov.in/display-details/126448059/REG/737176579" target="_blank" rel="noopener">21326204000609</a></span><span>© 2026 Originals by Lignio. Made in India.</span></div>
   </div>
 </footer>
@@ -1098,7 +1098,7 @@ async function payOnline(){const pr=problem();if(pr){$("#err").textContent=pr;re
     saveOrder({id:res.razorpay_payment_id});
     $("#paidBox").innerHTML=`<b>Payment received. Thank you!</b>We've got your order (payment ID ${res.razorpay_payment_id}). We'll pack it within 1–3 working days and send tracking on WhatsApp.`;$("#paidBox").hidden=false;
     cart={};renderCart();toast("Payment successful")},
-   modal:{ondismiss:()=>{btn.disabled=false;btn.textContent="Pay online · UPI / Card"}}});
+   modal:{ondismiss:()=>{btn.disabled=false;btn.textContent="Pay online · UPI / Card";if($("#paidBox").hidden&&!$("#err").textContent)$("#err").textContent="Payment cancelled. Your bag is saved, so you can try again."}}});
   rz.on("payment.failed",e=>{$("#err").textContent="Payment failed: "+((e.error&&e.error.description)||"please try again.")});
   rz.open();
  }catch(e){$("#err").textContent=e.message==="load"?"Could not open the payment window. Check your internet and try again.":e.message}
